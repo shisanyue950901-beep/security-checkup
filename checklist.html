@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5-Minute Security Self-Check for AI-Built Apps — CapsAGI</title>
+<meta name="description" content="Six fast checks you can run on your own AI-built app (Next.js / Supabase / Firebase) to catch the issues we find most often in security audits.">
+<style>
+body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.65; color: #1a1a1a; max-width: 820px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+h1 { font-size: 1.9rem; line-height: 1.3; }
+h2 { font-size: 1.25rem; margin-top: 2.4rem; border-bottom: 1px solid #e5e5e5; padding-bottom: .3rem; }
+a { color: #0b5cad; }
+.cta { display: inline-block; background: #0b5cad; color: #fff; padding: .75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin: .6rem .4rem .6rem 0; }
+.cta.secondary { background: #fff; color: #0b5cad; border: 1px solid #0b5cad; }
+.small { color: #555; font-size: .93rem; }
+code { background: #f2f2f2; padding: .1rem .35rem; border-radius: 4px; font-size: .92em; word-break: break-all; }
+.bad { color: #a11; font-weight: 600; }
+.good { color: #176117; font-weight: 600; }
+footer { margin-top: 3rem; border-top: 1px solid #e5e5e5; padding-top: 1rem; font-size: .9rem; color: #555; }
+li { margin: .35rem 0; }
+</style>
+</head>
+<body>
+
+<h1>The 5-minute security self-check for AI-built apps</h1>
+
+<p>Six checks you can run on <strong>your own app</strong> right now — no tools to install, no expertise needed. These are the exact issues we find most often when auditing apps built with AI tools on Next.js + Supabase or Firebase. If your app fails even one, it is worth a closer look.</p>
+
+<p class="small">Run these only against apps you own. That is also our rule: we never test anything without the owner's written OK.</p>
+
+<h2>1. Can a stranger read your database with your public key?</h2>
+<p>Your Supabase <code>anon</code> key is public by design — it ships in your frontend. What protects your data is Row Level Security. Test it: open a terminal and run this against a table that should be private (replace the placeholders):</p>
+<p><code>curl "https://YOUR-PROJECT.supabase.co/rest/v1/YOUR_TABLE?select=*" -H "apikey: YOUR-ANON-KEY" -H "Authorization: Bearer YOUR-ANON-KEY"</code></p>
+<p><span class="good">Good:</span> an empty list <code>[]</code> or a permission error. <span class="bad">Bad:</span> actual rows come back — anyone on the internet can read that table, no login needed. Fix: enable RLS on the table and add policies scoped to <code>auth.uid()</code>.</p>
+
+<h2>2. Is your service_role key anywhere near the browser?</h2>
+<p>The <code>service_role</code> key bypasses all row-level rules — it is a master key. Search your repo and your deployed site for it:</p>
+<ul>
+<li>In your codebase: search for <code>service_role</code> and for any env variable starting with <code>NEXT_PUBLIC_</code> that holds a key other than the anon key.</li>
+<li>In your browser: open your live app, view source / open the JS bundles, and search for <code>service_role</code> or long <code>eyJ...</code> tokens that are not the anon key.</li>
+</ul>
+<p><span class="bad">Bad:</span> the master key appears in anything the browser can download. Fix: move it to server-only code (API routes / Edge Functions), and rotate it in the Supabase dashboard — once it has shipped, rotating is the only safe option.</p>
+
+<h2>3. Can anyone list your storage bucket?</h2>
+<p>Public buckets serve files by direct URL, but listing should be off unless you mean it. Try opening:</p>
+<p><code>https://YOUR-PROJECT.supabase.co/storage/v1/object/list/YOUR-BUCKET</code></p>
+<p>as a POST with your anon key, or simply check the bucket's policies in the Supabase dashboard (Storage → Policies).</p>
+<p><span class="bad">Bad:</span> a policy lets the <code>public</code> role SELECT/list the whole bucket — every user's uploads become enumerable, including "private" files nobody was supposed to find. This is the single most common critical finding in our audits. Fix: scope SELECT policies to the file owner, and keep sensitive buckets private with signed URLs.</p>
+
+<h2>4. Is your .env file in your public repo?</h2>
+<p>On GitHub, open your repository and search for <code>.env</code> files (<code>.env</code>, <code>.env.local</code>, <code>.env.production</code>). AI coding tools create them; one wrong commit publishes them.</p>
+<p><span class="bad">Bad:</span> an env file with real keys is committed — even if you later deleted it, it lives in git history. Fix: rotate every key in it, add <code>.env*</code> to <code>.gitignore</code>, and treat history rewriting as a cleanup, not a cure.</p>
+
+<h2>5. Does your admin area trust the browser?</h2>
+<p>Log in as a normal (non-admin) user, then open your admin URL directly. Then try again in a private window with no login at all.</p>
+<p><span class="bad">Bad:</span> the admin page loads, or admin actions work, based on anything the browser controls (a flag in local storage, a header like <code>x-admin: true</code>, a hidden-but-reachable route). We have seen apps where the only "admin check" was exactly that header. Fix: enforce the role check on the server, on every admin route and API endpoint, from the session — never from client-supplied data.</p>
+
+<h2>6. Do your sessions ever expire?</h2>
+<p>In Supabase: Authentication → Settings — check the JWT expiry. In Firebase: session cookies / token settings. Then check your own login flow: after you "log out", does the old token still work if you replay it?</p>
+<p><span class="bad">Bad:</span> tokens valid for weeks, or still valid after logout and password change. Fix: shorten access-token lifetime (an hour is typical), rely on refresh-token rotation, and invalidate sessions on password change.</p>
+
+<h2>Failed one? That's what the checkup is for</h2>
+<p>This list covers what is visible from the outside. The full checkup reads your code the way attacks actually chain — across files: access control, database triggers, upload paths, webhooks, dependencies — and gives you graded findings with file-and-line evidence and paste-ready fix prompts.</p>
+<p>
+<a class="cta" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_7cSVGIZtPyFbN8hGwKGg3d?type=onetime&currency=USD">Get my checkup — $299 founding price</a>
+<a class="cta secondary" href="sample-report.html">See a sample report</a>
+</p>
+<p class="small">Not sure yet? Email us your app URL and we will tell you honestly whether a checkup makes sense for your stack: <a href="mailto:shisanyue950901@gmail.com">shisanyue950901@gmail.com</a></p>
+
+<footer>
+CapsAGI Security Review · <a href="index.html">Checkup</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refund.html">Refund Policy</a> · Contact: <a href="mailto:shisanyue950901@gmail.com">shisanyue950901@gmail.com</a>
+</footer>
+
+</body>
+</html>
