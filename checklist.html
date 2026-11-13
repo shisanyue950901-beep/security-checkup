@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>5-Minute Security Self-Check for AI-Built Apps — CapsAGI</title>
-<meta name="description" content="Six fast checks you can run on your own AI-built app (Next.js / Supabase / Firebase) to catch the issues we find most often in security audits.">
+<meta name="description" content="Seven fast checks you can run on your own AI-built app (Next.js / Supabase / Firebase) to catch the issues we find most often in security audits.">
 <style>
 body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.65; color: #1a1a1a; max-width: 820px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
 h1 { font-size: 1.9rem; line-height: 1.3; }
@@ -24,7 +24,7 @@ li { margin: .35rem 0; }
 
 <h1>The 5-minute security self-check for AI-built apps</h1>
 
-<p>Six checks you can run on <strong>your own app</strong> right now — no tools to install, no expertise needed. These are the exact issues we find most often when auditing apps built with AI tools on Next.js + Supabase or Firebase. If your app fails even one, it is worth a closer look.</p>
+<p>Seven checks you can run on <strong>your own app</strong> right now — no tools to install, no expertise needed. These are the exact issues we find most often when auditing apps built with AI tools on Next.js + Supabase or Firebase. If your app fails even one, it is worth a closer look.</p>
 
 <p class="small">Run these only against apps you own. That is also our rule: we never test anything without the owner's written OK.</p>
 
@@ -59,11 +59,14 @@ li { margin: .35rem 0; }
 <p>In Supabase: Authentication → Settings — check the JWT expiry. In Firebase: session cookies / token settings. Then check your own login flow: after you "log out", does the old token still work if you replay it?</p>
 <p><span class="bad">Bad:</span> tokens valid for weeks, or still valid after logout and password change. Fix: shorten access-token lifetime (an hour is typical), rely on refresh-token rotation, and invalidate sessions on password change.</p>
 
-<h2>Failed one? That's what the checkup is for</h2>
-<p>This list covers what is visible from the outside. The full checkup reads your code the way attacks actually chain — across files: access control, database triggers, upload paths, webhooks, dependencies — and gives you graded findings with file-and-line evidence and paste-ready fix prompts.</p>
+<h2>7. Are your AI endpoints rate-limited and capped?</h2>
+<p>Every route that calls a paid AI API — chat, image generation, text-to-speech, embeddings — spends your money on each request. Check each one: does it require a signed-in user? Is there a per-user or per-IP rate limit in the code? And in your provider's dashboard, is there a hard monthly spending cap?</p>
+<p><span class="bad">Bad:</span> an endpoint anyone can call, as fast as they can script it, with no cap behind it — one script can run it all night, and you find out from the invoice. Fix: require authentication on AI-calling routes, add rate limits, and set a hard spending cap with your provider.</p>
+
+<h2>Failed one? The Go-Live Check covers the expensive ones — in 24 hours</h2>
+<p>This list covers what is visible from the outside. The Go-Live Check runs the four fatal checks — open database rules, keys in the browser, unlimited AI endpoints, public buckets — across your whole codebase, and gives you plain-English findings with file-and-line evidence and fix prompts you can paste straight into Cursor. Report within 24 hours of read-only access.</p>
 <p>
-<a class="cta" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_7cSVGIZtPyFbN8hGwKGg3d?type=onetime&currency=USD">Get my checkup — $299 founding price</a>
-  <a class="cta secondary" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_1ZEncPhxzZ3EpdH9F64VZC?type=onetime&currency=USD">Starter checkup — $199 (secrets, dependencies, database rules)</a>
+<a class="cta" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_1ZEncPhxzZ3EpdH9F64VZC?type=onetime&currency=USD">Get the Go-Live Check — $199</a>
 <a class="cta secondary" href="sample-report.html">See a sample report</a>
 </p>
 <p class="small">Not sure yet? Email us your app URL and we will tell you honestly whether a checkup makes sense for your stack: <a href="mailto:shisanyue950901@gmail.com">shisanyue950901@gmail.com</a></p>
