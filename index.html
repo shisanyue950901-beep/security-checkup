@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI-Built App Security Checkup — CapAIGC Security Review</title>
-<meta name="description" content="Human-verified static code security checkup for AI-built web apps. Severity-rated findings with file-and-line evidence and paste-ready fix prompts. $499, founding price $299.">
+<title>Go-Live Security & Cost-Cap Check for AI-Built Apps — CapsAGI</title>
+<meta name="description" content="A 24-hour, human-verified check of the four issues that actually cost AI-built apps money: open database rules, keys shipped to the browser, unlimited AI endpoints, public storage. Plain-English report with paste-ready fix prompts.">
 <style>
 body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.65; color: #1a1a1a; max-width: 820px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
 h1 { font-size: 1.9rem; line-height: 1.3; }
@@ -20,18 +20,30 @@ li { margin: .35rem 0; }
 </head>
 <body>
 
-<h1>Your AI built the app. Who checked it for holes?</h1>
+<h1>Your AI app is one leaked key away from a very expensive night.</h1>
 
-<p>A human-verified security checkup for AI-built web apps — every finding backed by file-and-line evidence, with fix prompts you can paste straight back into your AI coding tool.</p>
+<p>AI builders write fast — and they routinely ship apps with database rules wide open, server keys sitting in the browser, and AI endpoints with no rate limits. One stranger with your public key can read your whole database. One script against an unlimited endpoint can turn into an API bill you never budgeted for. The Go-Live Check looks at exactly the four ways that happens — and hands you the fixes — within 24 hours.</p>
 
 <p>
-<a class="cta" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_7cSVGIZtPyFbN8hGwKGg3d?type=onetime&currency=USD">Get my checkup — $299 founding price</a>
+<a class="cta" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_1ZEncPhxzZ3EpdH9F64VZC?type=onetime&currency=USD">Get the Go-Live Check — $199</a>
 <a class="cta secondary" href="sample-report.html">See a sample report</a>
 </p>
-<p class="small"> Static code review only · Your code is read-only, never executed, deleted within 7 days · AI-assisted analysis, every finding human-verified · Report in 3 business days</p>
+<p class="small"><a href="#price">Need the whole codebase reviewed? Full Checkup + Fix PR — $499 ↓</a></p>
+<p class="small">Static code review only — we never run or attack your app · Read-only access, deleted within 7 days of delivery · AI-assisted analysis, every finding human-verified against your code · Go-Live report within 24 hours of access</p>
 
-<p>Not sure where you stand? Run the free <a href="checklist.html">5-minute security self-check</a> first — six tests you can do on your own app right now.</p>
-  <h2>What we check</h2>
+<p>Not sure where you stand? Run the free <a href="checklist.html">5-minute security self-check</a> first — seven tests you can do on your own app right now.</p>
+
+<h2>The four ways an AI-built app quietly costs you money</h2>
+<ol>
+<li><strong>Database rules left wide open.</strong> If Row Level Security (Supabase) or your Firebase rules aren't doing their job, anyone holding your public anon key — which ships in your frontend — can read or write every table. Your users' data, gone or changed, no hacking required.</li>
+<li><strong>Server keys shipped to the browser.</strong> A <code>service_role</code> or secret API key inside a frontend bundle bypasses every rule you wrote. It's a master key, published.</li>
+<li><strong>AI endpoints with no limits.</strong> Routes that call paid APIs (chat, image, voice) without rate limits or spend caps can be scripted overnight — you find out from the invoice.</li>
+<li><strong>Public storage buckets.</strong> If bucket policies let the public role list files, every "private" upload your users trusted you with is enumerable by anyone.</li>
+</ol>
+<p>Every finding comes with file-and-line evidence and a <strong>fix prompt you can paste straight into Cursor</strong> (or hand to your AI builder) — no security background needed to apply it.</p>
+
+<h2>Going deeper: the Full Checkup covers the whole codebase</h2>
+<p>The Go-Live Check covers the four fatal issues above. The Full Checkup reviews everything, across files, the way attacks actually chain together:</p>
 <ul>
 <li>Secrets &amp; API keys shipped to the browser</li>
 <li>Login, sessions, and tokens that never expire</li>
@@ -45,36 +57,46 @@ li { margin: .35rem 0; }
 
 <h2>How it works</h2>
 <ol>
-<li><strong>Confirm</strong> — you sign a one-page authorization (your code, your permission) and grant read-only access.</li>
-<li><strong>Review</strong> — we read the whole codebase across files, the way attacks actually chain together — not a scanner dump.</li>
-<li><strong>Report</strong> — risk score, findings sorted by severity, each with evidence, impact, a fix, and a paste-ready fix prompt. <a href="sample-report.html">See exactly what that looks like.</a></li>
-<li><strong>Re-check</strong> — you fix (or your AI does), we re-review the same scope once, free.</li>
+<li><strong>Confirm</strong> — you sign a one-page authorization (your code, your permission) and grant read-only access. That's all we need — never your live app, never production passwords.</li>
+<li><strong>Review</strong> — AI-assisted analysis, then a human reviewer re-verifies every finding against your actual code. If we can't point at the line, it doesn't go in the report.</li>
+<li><strong>Report</strong> — Go-Live: a one-page report within 24 hours. Full Checkup: a graded report in 3 business days, plus a fix PR for the confirmed findings (or a patch package if you prefer not to grant write access).</li>
+<li><strong>Re-check</strong> (Full Checkup) — merge the fixes, and we re-review the same scope once, free.</li>
 </ol>
 
-<h2>Price</h2>
-<p><span class="price">Starter Checkup — $199</span><br>
-  <span class="small">The three issue classes we find most often: secrets exposure, dependency vulnerabilities, and database rules (Supabase RLS / Firebase rules). Report in 2 business days.</span></p>
-  <p><a class="cta secondary" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_1ZEncPhxzZ3EpdH9F64VZC?type=onetime&currency=USD">Get the Starter checkup — $199</a></p>
-  <p><span class="price">Full Security Checkup — $499</span><br>
-    <span class="small">Founding price <strong>$299</strong> for the first 3 clients.</span></p>
-<p>One codebase (Next.js / Node / Supabase / Firebase and similar stacks), report in 3 business days, one re-check included. No Critical or High findings? Full refund or full credit — your choice. The checkup fee is fully credited toward a fix engagement if you want us to patch it for you.</p>
+<h2 id="price">Price</h2>
+<p><span class="price">Go-Live Security &amp; Cost-Cap Check — $199</span><br>
+<span class="small">The four fatal checks above, across your whole codebase — not just the pages you show us. One-page report within <strong>24 hours</strong> of read-only access: plain-English findings, file-and-line evidence, and a paste-ready fix prompt for each one. Built for the week you launch, raise prices, or start taking real users.</span></p>
+<p><a class="cta secondary" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_1ZEncPhxzZ3EpdH9F64VZC?type=onetime&currency=USD">Get the Go-Live Check — $199</a></p>
+<p><span class="price">Full Security Checkup + Fix PR — $499</span></p>
+<p>The complete audit: everything in the Go-Live Check plus access control, database triggers, upload paths, webhooks, sessions and dependencies, reviewed across files. You get the graded report (risk score; Critical / High / Medium / Low), a <strong>fix PR for the confirmed findings — or a patch package if you prefer not to grant write access</strong>, and one free re-check after you merge. Report in 3 business days.<br>
+No Critical or High findings? Full refund or full credit — your choice.</p>
+<p><a class="cta" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_6KFrEYVKMkF0E7l9OXNoo2?type=onetime&currency=USD">Book the Full Checkup — $499</a></p>
+<p class="small"><em>Founding price: the Full Checkup is <a href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_7cSVGIZtPyFbN8hGwKGg3d?type=onetime&currency=USD">$299 for the first 3 clients</a>.</em></p>
+
+<h2>For agencies &amp; MVP studios: white-label checkups</h2>
+<p>You ship client apps with AI builders — fast. At handover, your client asks the question nobody on the team can answer on paper: <em>"Is it secure?"</em> We run the checkup under <strong>your</strong> brand: the report carries your name, your client never sees ours. Use it to pass client acceptance, or sell it as an add-on in your delivery package.</p>
+<p><strong>Your first white-label checkup is free</strong> — one real client project, the complete Full Checkup scope, full report, your name on it.</p>
+<p>The only thing we ask in return: after your client accepts delivery, we may publish a <strong>one-page anonymized case study</strong> — problem types and delivery facts only, never your name or your client's. We agree that in writing before any work starts.</p>
+<p><a class="cta secondary" href="mailto:shisanyue950901@gmail.com">Start with a free white-label checkup →</a></p>
 
 <h2>What this is not</h2>
-<p>This is a static code review, not a penetration test — we never attack your live app. It is not a compliance certification (SOC 2 / PCI / HIPAA). A clean report means no confirmed findings in the reviewed scope, not a guarantee of security.</p>
+<p>This is a static code review, not a penetration test — we never attack your live app. The Go-Live Check is a focused review of the four fatal issue classes, not full coverage — that is what the Full Checkup is for. It is not a compliance certification (SOC 2 / PCI / HIPAA). A clean report means no confirmed findings in the reviewed scope, not a guarantee of security.</p>
 
 <h2>FAQ</h2>
 <p><strong>Do you need my live app or passwords?</strong><br>No. Source code, read-only. Never your production credentials.</p>
 <p><strong>Will you run my code?</strong><br>Never. Static review only, in an isolated environment.</p>
-<p><strong>What happens to my code afterwards?</strong><br>Deleted within 7 days of delivery. Findings are never published; anonymized samples only with your separate written permission.</p>
+<p><strong>How do you keep my source code confidential?</strong><br>Read-only access, used for your checkup and nothing else. Your code is never shared, never used to train anything, and never published — anonymized samples only with your separate written permission. Everything is deleted within 7 days of delivery. If you need it in writing, we'll sign your NDA before we start.</p>
 <p><strong>Is this done by AI?</strong><br>Analysis is AI-assisted; every single finding is re-verified against your actual code by a human reviewer before it reaches the report — if we can't point at the line, it doesn't go in.</p>
+<p><strong>I use Supabase Auth (or Firebase Auth). Isn't security already handled?</strong><br>Auth handles <em>who signs in</em>. It doesn't decide what a signed-in — or anonymous — visitor can read and write. That's your database rules, your policies, and where your keys live: exactly the parts the AI generates and nobody reviews. Most of what we find lives in that gap.</p>
 <p><strong>My stack isn't Next.js/Supabase.</strong><br>Ask — if it's outside what we can review well, we'll tell you upfront rather than half-do it.</p>
 
-<h2>Shipping soon?</h2>
-<p>Get the checkup before your users find the holes.</p>
-<p><a class="cta" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_6KFrEYVKMkF0E7l9OXNoo2?type=onetime&currency=USD">Book the standard Checkup — $499</a></p>
+<h2>Launching this week?</h2>
+<p>Check the four fatal issues before your first users — or your first API bill — find them for you.</p>
+<p><a class="cta" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_1ZEncPhxzZ3EpdH9F64VZC?type=onetime&currency=USD">Get the Go-Live Check — $199</a>
+<a class="cta secondary" href="https://pancake.waffo.ai/store/capaigc-rx4wet45/product/PROD_6KFrEYVKMkF0E7l9OXNoo2?type=onetime&currency=USD">Full Checkup + Fix PR — $499</a></p>
 
 <footer>
-CapAIGC Security Review · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refund.html">Refund Policy</a> · Contact: <a href="mailto:shisanyue950901@gmail.com">shisanyue950901@gmail.com</a>
+CapsAGI Security Review · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refund.html">Refund Policy</a> · Contact: <a href="mailto:shisanyue950901@gmail.com">shisanyue950901@gmail.com</a>
 </footer>
 
 </body>
