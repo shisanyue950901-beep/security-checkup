@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supabase RLS 自检 — CapsAGI</title>
+<meta name="description" content="把你的 Supabase migration SQL 贴进来，60 秒扫出 USING (true)、缺 TO 子句、没开 RLS 的表和泄漏的密钥。全部在浏览器本地计算，不上传、不留存。">
+<style>
+  :root { --bg:#0b0f14; --panel:#121821; --line:#1f2937; --fg:#e5e7eb; --dim:#8b98a9;
+          --crit:#f0553f; --high:#f0a13f; --ok:#3fb27f; --acc:#4f9cf9; }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  .wrap { max-width:900px; margin:0 auto; padding:32px 20px 72px; }
+  h1 { font-size:24px; margin:0 0 6px; letter-spacing:-.02em; }
+  .sub { color:var(--dim); margin:0 0 22px; font-size:14px; }
+  textarea { width:100%; min-height:240px; resize:vertical; padding:14px; border-radius:10px;
+             border:1px solid var(--line); background:var(--panel); color:var(--fg);
+             font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 26px; align-items:center; }
+  button { cursor:pointer; border-radius:8px; border:1px solid var(--line); background:var(--panel);
+           color:var(--fg); padding:10px 16px; font-size:14px; }
+  button.primary { background:var(--acc); border-color:var(--acc); color:#06101d; font-weight:600; }
+  button:hover { filter:brightness(1.12); }
+  .score { display:flex; align-items:baseline; gap:12px; margin:0 0 4px; }
+  .score b { font-size:40px; letter-spacing:-.03em; }
+  .meta { color:var(--dim); font-size:13px; margin:0 0 20px; }
+  .card { border:1px solid var(--line); border-left-width:3px; border-radius:8px;
+          padding:14px 16px; margin:0 0 12px; background:var(--panel); }
+  .card.critical { border-left-color:var(--crit); }
+  .card.high { border-left-color:var(--high); }
+  .card.medium { border-left-color:var(--dim); }
+  .tag { font:600 11px/1 ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; }
+  .card.critical .tag { color:var(--crit); } .card.high .tag { color:var(--high); }
+  .title { font-weight:600; margin:6px 0 8px; }
+  code.ev { display:block; white-space:pre-wrap; word-break:break-all; background:#0a0e13; border:1px solid var(--line);
+            border-radius:6px; padding:8px 10px; font:12px/1.5 ui-monospace,monospace; color:#a9b6c7; }
+  .kv { color:var(--dim); font-size:13px; margin:8px 0 0; }
+  .kv b { color:var(--fg); font-weight:600; }
+  .cta { margin-top:34px; padding:18px; border:1px solid var(--line); border-radius:10px; background:#0e141c; }
+  .cta h2 { font-size:17px; margin:0 0 8px; }
+  .cta p { margin:0 0 12px; color:var(--dim); font-size:14px; }
+  .cta a { color:var(--acc); }
+  .empty { color:var(--ok); }
+  footer { margin-top:40px; color:var(--dim); font-size:12px; border-top:1px solid var(--line); padding-top:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Supabase RLS 自检</h1>
+  <p class="sub">把 migration / schema SQL 贴进来，扫 <code>USING (true)</code>、缺 <code>TO</code> 子句的策略、没开 RLS 的表、以及写在代码里的密钥。
+  全部在浏览器本地计算：不上传、不联网、刷新即丢，代码不出你的机器。</p>
+
+  <textarea id="sql" spellcheck="false" placeholder="-- 把 supabase/migrations/*.sql 的内容贴到这里"></textarea>
+  <div class="row">
+    <button class="primary" id="run">扫描</button>
+    <button id="sample">载入示例（一份典型的 AI 生成项目）</button>
+    <button id="clear">清空</button>
+  </div>
+
+  <div id="out"></div>
+
+  <div class="cta">
+    <h2>扫出问题了？</h2>
+    <p>这是规则匹配，只覆盖 RLS 与密钥这两类。人工复核会继续看：越权路径（IDOR / BOLA）、会话与鉴权、注入与文件处理、
+    付费接口的额度与 spend cap、webhook 验签、存储桶权限。每条问题带文件行号证据和可粘贴的 AI 修复提示词。</p>
+    <p>把上面这份结果连同 repo 一起发过来，第一轮人工预检免费，只做三家。
+    <a href="https://github.com/shisanyue950901-beep/vibe-security-rules">规则包在 GitHub 开源</a>，
+    需要下单走 <a href="https://capsagi.com">capsagi.com</a>。</p>
+  </div>
+
+  <footer>静态检查，不对生产环境发起任何请求。扫描逻辑开源在 rls-scan.js，可以自己读完再贴代码。</footer>
+</div>
+
+<script src="rls-scan.js"></script>
+<script>
+var SAMPLE = [
+  '-- 典型 AI 生成项目：三条口子全占',
+  'create table public.orders (id uuid primary key, user_id uuid, email text, total int);',
+  'alter table public.orders enable row level security;',
+  'create policy "allow_all" on public.orders',
+  '  for all to authenticated',
+  '  using (true) with check (true);',
+  '',
+  'create table public.profiles (id uuid primary key, email text);',
+  'alter table public.profiles enable row level security;',
+  'create policy "read_all" on public.profiles for select using (true);',
+  '',
+  'create table public.invoices (id uuid primary key, total int);'
+].join('\n');
+
+var $sql = document.getElementById('sql'),
+    $out = document.getElementById('out');
+
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function render(r) {
+  if (!r.stats.tables && !r.findings.length) {
+    $out.innerHTML = '<p class="meta">没解析到建表或策略语句。确认贴的是 SQL，不是 JSON 或 TypeScript。</p>';
+    return;
+  }
+  var scoreColor = r.score >= 80 ? 'var(--ok)' : (r.score >= 40 ? 'var(--high)' : 'var(--crit)');
+  var html = '<div class="score"><b style="color:' + scoreColor + '">' + r.score + '</b><span class="meta">/100</span></div>'
+    + '<p class="meta">' + r.stats.tables + ' 张表 · ' + r.stats.policies + ' 条策略（其中 ' + r.stats.permissive
+    + ' 条等于全开）· ' + r.stats.rlsOff + ' 张表没开 RLS · 严重 ' + r.counts.critical
+    + ' / 高 ' + r.counts.high + ' / 中 ' + r.counts.medium + '</p>';
+
+  if (!r.findings.length) {
+    html += '<p class="empty">没扫出问题。这不等于安全：静态规则看不到越权逻辑、业务层鉴权和第三方配置。</p>';
+  }
+  r.findings.forEach(function (f) {
+    html += '<div class="card ' + f.severity + '">'
+      + '<div class="tag">' + f.severity + ' · ' + f.code + ' · ' + esc(f.table) + ' · L' + f.line + '</div>'
+      + '<div class="title">' + esc(f.title) + '</div>'
+      + '<code class="ev">' + esc(f.evidence) + '</code>'
+      + '<p class="kv"><b>影响：</b>' + esc(f.impact) + '</p>'
+      + '<p class="kv"><b>改法：</b>' + esc(f.fix) + '</p>'
+      + '</div>';
+  });
+  $out.innerHTML = html;
+}
+
+document.getElementById('run').onclick = function () {
+  render(RLSScan.scan($sql.value));
+};
+document.getElementById('sample').onclick = function () {
+  $sql.value = SAMPLE; render(RLSScan.scan(SAMPLE));
+};
+document.getElementById('clear').onclick = function () {
+  $sql.value = ''; $out.innerHTML = '';
+};
+</script>
+</body>
+</html>
