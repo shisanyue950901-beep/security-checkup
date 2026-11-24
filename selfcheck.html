@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Supabase RLS self-check — CapsAGI</title>
+<title>Bremta — Supabase RLS self-check</title>
 <meta name="description" content="Paste your Supabase migrations and get an offline scan for USING (true) policies, policies missing a TO clause, tables with RLS never enabled, and secret-shaped values. Runs in your browser: no upload, no account, no network.">
 <style>
   :root { --bg:#0b0f14; --panel:#121821; --line:#1f2937; --fg:#e5e7eb; --dim:#8b98a9;
@@ -46,10 +46,10 @@
   .btn.ghost { background:transparent; color:var(--acc); border:1px solid var(--acc); }
   .empty { color:var(--ok); }
   footer { margin-top:40px; color:var(--dim); font-size:12px; border-top:1px solid var(--line); padding-top:14px; }
-</style>
+.brand{display:flex;align-items:baseline;gap:.6rem;font-size:1.4rem;font-weight:800;color:#e5e7eb;} .brand .tagline{font-size:.95rem;font-weight:400;color:#8b98a9;} </style>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap"><header class="brand"><strong>Bremta</strong> <span class="tagline">All laid out.</span></header>
   <h1>Supabase RLS self-check</h1>
   <p class="sub">Paste your <code>supabase/migrations/*.sql</code> (or a schema dump) and get a scan for
   <code>USING (true)</code> policies, policies with no <code>TO</code> clause, <code>public</code> tables with RLS never enabled,
