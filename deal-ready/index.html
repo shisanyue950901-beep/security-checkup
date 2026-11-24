@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deal-Ready — Pre-Sale Due-Diligence Report for Small SaaS | CapsAGI</title>
-<meta name="description" content="Pre-sale due-diligence report for small SaaS businesses listed on Acquire.com, Flippa, or Tiny Acquisitions. Seller Report $299, Buyer Report $499 one-time, delivered in 5 business days with source-linked, re-runnable evidence.">
+<meta name="description" content="Pre-sale due-diligence report for small SaaS businesses listed on Acquire.com, Flippa, or Tiny Acquisitions. Quick Check $99 in 48 hours; Seller Report $299 and Buyer Report $499 full reports, delivered in 5 business days. Independent review by CapsAGI, the team behind the Security Checkup. Pay in USDT (TRC20).">
 <style>
   :root {
     --ink: #1a1a1a;
@@ -28,1692 +28,482 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     --max-w: 980px;
   }
-
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-  }
-
-  body {
-    margin: 0;
-    font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.65;
-    color: var(--ink);
-    background: var(--surface);
-    overflow-x: hidden;
-  }
-
-  a {
-    color: var(--brand);
-    text-underline-offset: 3px;
-  }
-
-  a:hover {
-    color: var(--brand-hover);
-  }
-
-  a:focus-visible,
-  summary:focus-visible {
-    outline: 2px solid var(--brand);
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
-
-  .container {
-    width: 100%;
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 1.25rem;
-  }
-
-  /* Header & Navigation */
-  .site-header {
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
-  }
-
-  .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0.95rem 0;
-    flex-wrap: wrap;
-  }
-
-  .brand-mark {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: var(--ink);
-  }
-
-  .brand-name {
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-  }
-
-  .brand-by {
-    font-size: 0.82rem;
-    color: var(--ink-muted);
-    font-weight: 500;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    font-size: 0.9rem;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: var(--ink-secondary);
-    font-weight: 500;
-  }
-
-  .nav-links a:hover {
-    color: var(--brand);
-  }
-
-  .nav-links .nav-jump {
-    color: var(--brand);
-    font-weight: 600;
-  }
-
-  /* Hero */
-  .hero {
-    padding: 3rem 0 2.75rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .eyebrow-row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--brand);
-  }
-
-  .platform-pill {
-    display: inline-block;
-    padding: 0.18rem 0.55rem;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: var(--surface-subtle);
-    color: var(--ink-secondary);
-    font-size: 0.78rem;
-    font-weight: 500;
-  }
-
-  h1 {
-    margin: 0 0 1rem;
-    font-size: clamp(1.75rem, 3.6vw, 2.5rem);
-    line-height: 1.2;
-    letter-spacing: -0.025em;
-    max-width: 24ch;
-    color: var(--ink);
-  }
-
-  .hero-lead {
-    margin: 0 0 1.5rem;
-    max-width: 66ch;
-    font-size: 1.06rem;
-    line-height: 1.6;
-    color: var(--ink-secondary);
-  }
-
-  .hero-lead strong {
-    color: var(--ink);
-  }
-
-  /* Hero Key Facts Strip */
-  .facts-strip {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.75rem;
-    margin: 0 0 1.6rem;
-    padding: 0.95rem 1.1rem;
-    background: var(--surface-subtle);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-  }
-
-  .fact-item {
-    min-width: 0;
-  }
-
-  .fact-label {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--ink-muted);
-    margin-bottom: 0.15rem;
-  }
-
-  .fact-value {
-    display: block;
-    font-size: 0.98rem;
-    font-weight: 700;
-    color: var(--ink);
-    font-variant-numeric: tabular-nums;
-    line-height: 1.35;
-  }
-
-  .fact-sub {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--ink-secondary);
-    margin-top: 0.1rem;
-  }
-
-  /* CTA Buttons */
-  .cta-group {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.7rem;
-  }
-
-  .cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    padding: 0.78rem 1.4rem;
-    border-radius: var(--radius-cta);
-    background: var(--brand);
-    color: #ffffff;
-    border: 1px solid var(--brand);
-    font-size: 0.96rem;
-    font-weight: 600;
-    text-decoration: none;
-    line-height: 1.25;
-    cursor: pointer;
-    transition: background-color 0.15s ease, border-color 0.15s ease;
-    text-align: center;
-  }
-
-  .cta:hover {
-    background: var(--brand-hover);
-    border-color: var(--brand-hover);
-    color: #ffffff;
-  }
-
-  .cta.secondary {
-    background: var(--surface);
-    color: var(--brand);
-    border: 1px solid var(--brand);
-  }
-
-  .cta.secondary:hover {
-    background: var(--brand-tint);
-    color: var(--brand-hover);
-    border-color: var(--brand-hover);
-  }
-
-  .cta-note {
-    margin: 0 0 0.75rem;
-    font-size: 0.87rem;
-    color: var(--ink-secondary);
-    max-width: 68ch;
-  }
-
-  .buyer-shortcut {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--ink-secondary);
-  }
-
-  .buyer-shortcut a {
-    font-weight: 600;
-    text-decoration: none;
-    border-bottom: 1px solid var(--brand-border);
-  }
-
-  .buyer-shortcut a:hover {
-    border-bottom-color: var(--brand);
-  }
-
-  /* Generic Section Rhythm */
-  section.band {
-    padding: 3.25rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  section.band.subtle {
-    background: var(--surface-subtle);
-  }
-
-  .section-kicker {
-    margin: 0 0 0.35rem;
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--brand);
-  }
-
-  h2 {
-    margin: 0 0 0.6rem;
-    font-size: clamp(1.35rem, 2.4vw, 1.65rem);
-    line-height: 1.28;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-
-  .section-intro {
-    margin: 0 0 1.75rem;
-    max-width: 64ch;
-    color: var(--ink-secondary);
-    font-size: 0.98rem;
-  }
-
-  /* What We Check — 3-Column Card Grid */
-  .check-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .check-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    padding: 1.3rem 1.25rem;
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .check-num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.65rem;
-    height: 1.65rem;
-    border-radius: 6px;
-    background: var(--brand-tint);
-    color: var(--brand);
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-  }
-
-  .check-card h3 {
-    margin: 0 0 0.4rem;
-    font-size: 1.05rem;
-    line-height: 1.3;
-    color: var(--ink);
-  }
-
-  .check-summary {
-    margin: 0 0 0.85rem;
-    font-size: 0.93rem;
-    font-weight: 600;
-    color: var(--ink);
-    line-height: 1.45;
-  }
-
-  .check-list {
-    margin: 0;
-    padding-left: 1.1rem;
-    color: var(--ink-secondary);
-    font-size: 0.9rem;
-    line-height: 1.55;
-  }
-
-  .check-list li {
-    margin-bottom: 0.42rem;
-  }
-
-  .check-list li:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Standalone Evidence & Non-Audit Callout */
-  .evidence-callout {
-    border: 1px solid var(--brand-border);
-    border-left: 4px solid var(--brand);
-    background: var(--brand-tint);
-    border-radius: var(--radius-sm);
-    padding: 1.1rem 1.25rem;
-    color: var(--ink);
-    font-size: 0.96rem;
-    line-height: 1.6;
-  }
-
-  .evidence-callout strong {
-    color: var(--ink);
-  }
-
-  /* Deliverables Block (What You Get) */
-  .deliverables-wrap {
-    margin-top: 2.25rem;
-  }
-
-  .deliverables-title {
-    margin: 0 0 0.95rem;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--ink);
-  }
-
-  .deliverables-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.95rem;
-  }
-
-  .deliverable-item {
-    background: var(--surface-subtle);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    padding: 1.1rem 1.2rem;
-  }
-
-  .deliverable-item h4 {
-    margin: 0 0 0.35rem;
-    font-size: 0.98rem;
-    color: var(--ink);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .deliverable-item p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--ink-secondary);
-    line-height: 1.55;
-  }
-
-  .tag-inline {
-    display: inline-block;
-    padding: 0.1rem 0.45rem;
-    border-radius: 4px;
-    background: var(--brand-tint);
-    color: var(--brand);
-    font-size: 0.72rem;
-    font-weight: 600;
-    line-height: 1.3;
-  }
-
-  /* Trust & Sample Excerpt Section */
-  .sample-shell {
-    background: var(--surface);
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-card);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 1.5rem;
-  }
-
-  .sample-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem 1rem;
-    padding: 0.85rem 1.2rem;
-    background: var(--surface-subtle);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .sample-doc-title {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--ink);
-    word-break: break-word;
-  }
-
-  .sample-badge {
-    display: inline-block;
-    padding: 0.18rem 0.55rem;
-    border-radius: 999px;
-    background: var(--brand-tint);
-    border: 1px solid var(--brand-border);
-    color: var(--brand);
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  }
-
-  .sample-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 1.25rem;
-    padding: 0.7rem 1.2rem;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.82rem;
-    color: var(--ink-secondary);
-    background: #fcfdff;
-  }
-
-  .sample-meta code {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--ink);
-    background: var(--surface-code);
-    padding: 0.08rem 0.3rem;
-    border-radius: 4px;
-  }
-
-  .sample-entries {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1px;
-    background: var(--border);
-  }
-
-  .evidence-entry {
-    background: var(--surface);
-    padding: 1.05rem 1.2rem;
-    min-width: 0;
-  }
-
-  .entry-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 0.45rem;
-  }
-
-  .entry-id-group {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    flex-wrap: wrap;
-  }
-
-  .entry-id {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--ink);
-  }
-
-  .layer-chip {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    padding: 0.1rem 0.4rem;
-    border-radius: 4px;
-    background: var(--surface-code);
-    color: var(--ink-secondary);
-    border: 1px solid var(--border);
-  }
-
-  .grade-badge {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.14rem 0.48rem;
-    border-radius: 4px;
-    background: var(--brand-tint);
-    color: var(--brand);
-    border: 1px solid var(--brand-border);
-  }
-
-  .grade-badge.l0 {
-    background: #f4f5f7;
-    color: #3f4754;
-    border-color: #d0d5dd;
-  }
-
-  .entry-claim {
-    margin: 0 0 0.45rem;
-    font-size: 0.91rem;
-    font-weight: 600;
-    color: var(--ink);
-    line-height: 1.45;
-  }
-
-  .entry-source {
-    margin: 0 0 0.5rem;
-    font-size: 0.82rem;
-    color: var(--ink-secondary);
-    overflow-wrap: anywhere;
-  }
-
-  .cmd-box {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 0.76rem;
-    line-height: 1.45;
-    padding: 0.5rem 0.65rem;
-    background: var(--surface-code);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    color: var(--ink);
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    white-space: pre-wrap;
-  }
-
-  .sample-bpp {
-    border-top: 1px solid var(--border);
-    padding: 1rem 1.2rem;
-    background: #fbfcfe;
-  }
-
-  .sample-bpp-label {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--brand);
-    margin: 0 0 0.55rem;
-  }
-
-  .bpp-row {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.85rem;
-    font-size: 0.86rem;
-  }
-
-  .bpp-col > strong {
-    display: block;
-    font-size: 0.74rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--ink-muted);
-    margin-bottom: 0.2rem;
-  }
-
-  .bpp-col > span {
-    color: var(--ink);
-    line-height: 1.5;
-    display: block;
-  }
-
-  .bpp-col > span .grade-badge {
-    margin-left: 0.25rem;
-    vertical-align: baseline;
-  }
-
-  .sample-caption {
-    margin: 0;
-    padding: 0.65rem 1.2rem;
-    border-top: 1px solid var(--border);
-    background: var(--surface-subtle);
-    font-size: 0.82rem;
-    color: var(--ink-secondary);
-  }
-
-  /* L0-L4 Evidence Grade Legend */
-  .legend-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    padding: 1.25rem;
-  }
-
-  .legend-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 0.9rem;
-  }
-
-  .legend-header h3 {
-    margin: 0;
-    font-size: 1.02rem;
-    color: var(--ink);
-  }
-
-  .legend-note {
-    font-size: 0.84rem;
-    color: var(--ink-secondary);
-  }
-
-  .grade-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 0.55rem;
-  }
-
-  .grade-list li {
-    display: grid;
-    grid-template-columns: 3.1rem 1fr;
-    align-items: baseline;
-    gap: 0.75rem;
-    font-size: 0.9rem;
-    color: var(--ink-secondary);
-    padding-bottom: 0.55rem;
-    border-bottom: 1px solid #eef1f5;
-  }
-
-  .grade-list li:last-child {
-    border-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .grade-list strong {
-    color: var(--ink);
-  }
-
-  .layer-summary {
-    margin: 0.95rem 0 0;
-    padding-top: 0.8rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.84rem;
-    color: var(--ink-secondary);
-  }
-
-  /* Pricing Cards */
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-    align-items: stretch;
-    margin-bottom: 1.25rem;
-  }
-
-  .price-card {
-    background: var(--surface);
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-card);
-    padding: 1.5rem 1.45rem;
-    display: flex;
-    flex-direction: column;
-    box-shadow: var(--shadow-sm);
-    min-width: 0;
-  }
-
-  .price-card.featured {
-    border: 2px solid var(--brand);
-    box-shadow: var(--shadow-card);
-  }
-
-  .role-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-    margin-bottom: 0.8rem;
-    flex-wrap: wrap;
-  }
-
-  .role-badge {
-    display: inline-block;
-    padding: 0.2rem 0.6rem;
-    border-radius: 999px;
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    background: var(--surface-subtle);
-    color: var(--ink-secondary);
-    border: 1px solid var(--border);
-  }
-
-  .price-card.featured .role-badge {
-    background: var(--brand);
-    color: #ffffff;
-    border-color: var(--brand);
-  }
-
-  .role-hint {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--brand);
-  }
-
-  .price-card h3 {
-    margin: 0 0 0.45rem;
-    font-size: 1.22rem;
-    color: var(--ink);
-  }
-
-  .price-amount-row {
-    display: flex;
-    align-items: baseline;
-    gap: 0.45rem;
-    margin-bottom: 0.9rem;
-    padding-bottom: 0.9rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .price-amount {
-    font-size: 2.35rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1;
-    color: var(--ink);
-    font-variant-numeric: tabular-nums;
-  }
-
-  .price-term {
-    font-size: 0.9rem;
-    color: var(--ink-secondary);
-    font-weight: 500;
-  }
-
-  .card-audience {
-    margin: 0 0 1rem;
-    font-size: 0.95rem;
-    color: var(--ink);
-    line-height: 1.5;
-  }
-
-  .card-diff-list {
-    list-style: none;
-    margin: 0 0 1.4rem;
-    padding: 0;
-    display: grid;
-    gap: 0.6rem;
-    flex: 1;
-  }
-
-  .card-diff-list li {
-    position: relative;
-    padding-left: 1.25rem;
-    font-size: 0.91rem;
-    color: var(--ink-secondary);
-    line-height: 1.5;
-  }
-
-  .card-diff-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--brand);
-    font-weight: 700;
-  }
-
-  .card-diff-list li strong {
-    color: var(--ink);
-  }
-
-  .card-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-    margin-top: auto;
-  }
-
-  .card-actions .cta {
-    width: 100%;
-  }
-
-  .card-microcopy {
-    margin: 0.25rem 0 0;
-    font-size: 0.81rem;
-    color: var(--ink-secondary);
-    text-align: center;
-    line-height: 1.45;
-  }
-
-  /* Shared Strip Below Pricing Cards */
-  .shared-box {
-    background: var(--surface-subtle);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    padding: 1.25rem 1.35rem;
-  }
-
-  .shared-box h3 {
-    margin: 0 0 0.85rem;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--ink-secondary);
-  }
-
-  .shared-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.9rem;
-    margin-bottom: 1rem;
-  }
-
-  .shared-item strong {
-    display: block;
-    font-size: 0.86rem;
-    color: var(--ink);
-    margin-bottom: 0.15rem;
-  }
-
-  .shared-item span {
-    display: block;
-    font-size: 0.86rem;
-    color: var(--ink-secondary);
-    line-height: 1.45;
-  }
-
-  .pricing-promise {
-    margin: 0;
-    padding-top: 0.9rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.98rem;
-    font-weight: 700;
-    color: var(--ink);
-    text-align: center;
-  }
-
-  /* How It Works — 3 Steps */
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.1rem;
-  }
-
-  .step-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    padding: 1.25rem;
-  }
-
-  .step-num {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--brand);
-    background: var(--brand-tint);
-    border: 1px solid var(--brand-border);
-    padding: 0.15rem 0.5rem;
-    border-radius: 999px;
-    margin-bottom: 0.7rem;
-  }
-
-  .step-card h3 {
-    margin: 0 0 0.45rem;
-    font-size: 1.02rem;
-    color: var(--ink);
-  }
-
-  .step-card p {
-    margin: 0;
-    font-size: 0.92rem;
-    color: var(--ink-secondary);
-    line-height: 1.55;
-  }
-
-  /* Honest Limits — Full Contrast, Distinct Separation */
-  .limits-box {
-    background: var(--surface);
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-card);
-    padding: 1.5rem 1.55rem;
-  }
-
-  .limits-list {
-    margin: 0;
-    padding-left: 1.25rem;
-    display: grid;
-    gap: 0.95rem;
-    color: var(--ink);
-    font-size: 1rem;
-    line-height: 1.65;
-  }
-
-  .limits-list li {
-    color: var(--ink);
-  }
-
-  /* FAQ Accordion (Pure HTML/CSS) */
-  .faq-list {
-    display: grid;
-    gap: 0.75rem;
-  }
-
-  details.faq-item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    padding: 1.05rem 1.2rem;
-  }
-
-  details.faq-item summary {
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--ink);
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  details.faq-item summary::-webkit-details-marker {
-    display: none;
-  }
-
-  details.faq-item summary::after {
-    content: "+";
-    font-family: var(--font-mono);
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--brand);
-    flex-shrink: 0;
-  }
-
-  details.faq-item[open] summary::after {
-    content: "−";
-  }
-
-  .faq-answer {
-    margin: 0.7rem 0 0;
-    padding-top: 0.7rem;
-    border-top: 1px solid #eef1f5;
-    font-size: 0.95rem;
-    color: var(--ink-secondary);
-    line-height: 1.6;
-  }
-
-  .faq-answer strong {
-    color: var(--ink);
-  }
-
-  /* Bottom Conversion Band */
-  .final-cta {
-    padding: 3rem 0;
-    background: var(--brand-tint);
-    border-bottom: 1px solid var(--brand-border);
-  }
-
-  .final-cta-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-  }
-
-  .final-cta h2 {
-    margin: 0;
-  }
-
-  .final-cta p {
-    margin: 0;
-    max-width: 62ch;
-    color: var(--ink-secondary);
-  }
-
-  .final-cta .cta-group {
-    margin: 0.35rem 0 0.15rem;
-  }
-
-  .final-cta .cta-note {
-    margin: 0;
-  }
-
-  /* Footer */
-  footer.site-footer {
-    padding: 2rem 0 2.75rem;
-    font-size: 0.88rem;
-    color: var(--ink-secondary);
-  }
-
-  .footer-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.5rem;
-  }
-
-  .footer-inner p {
-    margin: 0;
-  }
-
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--font-sans); color: var(--ink); background: var(--surface); line-height: 1.6; }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.25rem; }
+  .site-header { border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 10; }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; }
+  .brand { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em; color: var(--ink); }
+  .brand span { color: var(--brand); }
+  .brand small { color: var(--ink-secondary); font-weight: 600; font-size: 0.85rem; }
+  .nav { display: flex; gap: 1rem; }
+  .nav a { font-weight: 500; color: var(--ink-secondary); }
+  .nav a.active { color: var(--brand); font-weight: 600; }
+  .nav-cta { background: var(--brand); color: #fff; padding: 0.5rem 1rem; border-radius: var(--radius-cta); font-weight: 600; }
+  .nav-cta:hover { background: var(--brand-hover); text-decoration: none; }
+  .hero { padding: 3.75rem 0 3rem; background: linear-gradient(180deg, var(--brand-tint) 0%, var(--surface) 100%); }
+  .hero-kicker { text-transform: uppercase; font-size: 0.85rem; font-weight: 700; color: var(--brand); letter-spacing: 0.05em; margin: 0 0 0.75rem; }
+  .hero h1 { font-size: 2.75rem; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 1.25rem; }
+  .hero-lead { font-size: 1.125rem; color: var(--ink-secondary); max-width: 780px; margin: 0 0 1.5rem; }
+  .hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .cta { display: inline-block; background: var(--brand); color: #fff; padding: 0.75rem 1.4rem; border-radius: var(--radius-cta); font-weight: 600; }
+  .cta:hover { background: var(--brand-hover); text-decoration: none; }
+  .cta.ghost { background: var(--surface); color: var(--brand); border: 1px solid var(--brand-border); }
+  .cta.ghost:hover { background: var(--brand-tint); }
+  .cta-note { font-size: 0.85rem; color: var(--ink-muted); margin: 0; }
+  .facts-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin-top: 2rem; }
+  .fact { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 0.9rem 1rem; }
+  .fact-label { font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: var(--ink-secondary); letter-spacing: 0.06em; }
+  .fact-value { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-top: 0.2rem; }
+  .fact-sub { font-size: 0.85rem; color: var(--ink-muted); }
+  .band { padding: 3rem 0; }
+  .band.subtle { background: var(--surface-subtle); }
+  .section-kicker { color: var(--brand); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.06em; margin: 0 0 0.5rem; }
+  h2 { font-size: 1.75rem; margin: 0 0 0.5rem; letter-spacing: -0.01em; line-height: 1.25; }
+  .section-intro { font-size: 1.05rem; color: var(--ink-secondary); max-width: 760px; margin: 0 0 1.5rem; }
+  .deliverables-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .check-card { border: 1px solid var(--border); border-radius: var(--radius-card); padding: 1.2rem 1.25rem; background: var(--surface); }
+  .check-card h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+  .check-card p { margin: 0; color: var(--ink-secondary); font-size: 0.95rem; }
+  .check-icon { display: inline-block; font-size: 1.25rem; color: var(--brand); margin-bottom: 0.5rem; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; align-items: stretch; }
+  .price-card { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-card); padding: 1.35rem 1.45rem; display: flex; flex-direction: column; box-shadow: var(--shadow-sm); }
+  .price-card.best { box-shadow: var(--shadow-card); }
+  .price-card h3 { margin: 0; font-size: 1.05rem; }
+  .price-role { font-size: 0.85rem; color: var(--ink-secondary); margin: 0.35rem 0 1rem; }
+  .price { font-size: 2.5rem; font-weight: 800; line-height: 1; margin: 0 0 0.25rem; }
+  .price-term { font-size: 0.85rem; color: var(--ink-muted); }
+  .price-card ul { list-style: none; margin: 1rem 0; padding: 0; }
+  .price-card li { margin-bottom: 0.55rem; padding-left: 1.25rem; position: relative; font-size: 0.95rem; }
+  .price-card li::before { content: "✓"; position: absolute; left: 0; color: var(--brand); }
+  .price-card .cta { margin-top: auto; text-align: center; }
+  .price-microcopy { margin-top: 0.75rem; font-size: 0.85rem; color: var(--ink-muted); }
+  .role-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: var(--brand-tint); color: var(--brand); border: 1px solid var(--brand-border); border-radius: 999px; padding: 0.2rem 0.6rem; margin-bottom: 0.65rem; }
+  .role-badge.neutral { background: var(--surface-subtle); color: var(--ink-secondary); border-color: var(--border); }
+  .shared-box { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-card); padding: 1.25rem 1.35rem; margin-top: 1.5rem; }
+  .shared-box h3 { margin: 0 0 0.75rem; }
+  .shared-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem 1.5rem; }
+  .shared-item { display: flex; gap: 0.6rem; align-items: flex-start; }
+  .shared-item .check-icon { margin: 0; }
+  .shared-item p { margin: 0; font-size: 0.95rem; color: var(--ink-secondary); }
+  .shared-item strong { color: var(--ink); }
+  .pricing-promise { text-align: center; font-size: 0.92rem; color: var(--ink-secondary); margin: 1.25rem 0 0; }
+  .steps-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .step-card { border: 1px solid var(--border); border-radius: var(--radius-card); padding: 1.25rem 1.35rem; background: var(--surface); }
+  .step-number { display: inline-block; background: var(--brand); color: #fff; font-weight: 700; border-radius: 50%; width: 2rem; height: 2rem; line-height: 2rem; text-align: center; margin-bottom: 0.75rem; }
+  .step-card h3 { margin: 0 0 0.5rem; }
+  .step-card p { margin: 0; color: var(--ink-secondary); }
+  .faq-list { display: grid; gap: 0.75rem; }
+  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 0.9rem 1.1rem; }
+  .faq-item summary { font-weight: 700; cursor: pointer; }
+  .faq-item p { margin: 0.6rem 0 0; color: var(--ink-secondary); }
+  .final-cta { text-align: center; background: var(--brand-tint); }
+  .final-cta p { color: var(--ink-secondary); font-size: 1.05rem; }
+  .final-cta .hero-cta { justify-content: center; }
+  .site-footer { border-top: 1px solid var(--border); padding: 2rem 0 1rem; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+  .footer-grid h4 { margin: 0 0 0.75rem; }
+  .footer-grid ul { list-style: none; padding: 0; margin: 0; }
+  .footer-grid li { margin-bottom: 0.35rem; }
+  .footer-bottom { margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem; font-size: 0.85rem; color: var(--ink-muted); }
+  /* Pay with USDT — native card design */
+  .pay-card { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-card); box-shadow: var(--shadow-sm); padding: 1.5rem 1.55rem; }
+  .pay-warning { background: #fef3f2; border: 1px solid #fecdca; border-left: 4px solid #b42318; color: #7a271a; border-radius: var(--radius-sm); padding: 0.9rem 1.1rem; font-size: 0.95rem; margin: 0 0 1.25rem; }
+  .pay-grid { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 1.5rem; align-items: start; }
+  .pay-grid h3 { margin: 0 0 0.5rem; font-size: 1rem; }
+  .pay-address-box { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 0.7rem 0.8rem; margin: 0 0 0.75rem; }
+  .pay-address-box code { font-family: var(--font-mono); font-size: 0.88rem; word-break: break-all; background: transparent; padding: 0; border: 0; color: var(--ink); }
+  .copy-btn { background: var(--brand); color: #fff; border: 1px solid var(--brand); border-radius: var(--radius-cta); padding: 0.45rem 0.85rem; font-weight: 600; font-size: 0.88rem; cursor: pointer; font-family: var(--font-sans); white-space: nowrap; }
+  .copy-btn:hover { background: var(--brand-hover); }
+  .pay-qr { text-align: center; background: var(--surface-subtle); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 1rem; }
+  .pay-qr img { max-width: 200px; width: 100%; height: auto; display: block; margin: 0 auto 0.5rem; }
+  .pay-qr p { margin: 0; font-size: 0.88rem; color: var(--ink-secondary); }
+  .pay-steps { margin: 1rem 0; padding-left: 1.25rem; }
+  .pay-steps li { margin-bottom: 0.5rem; }
+  .pay-note { font-size: 0.92rem; color: var(--ink-secondary); }
+  .pay-tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .pay-tier { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .pay-tier h4 { margin: 0; font-size: 1rem; }
+  .pay-tier p { margin: 0; font-size: 0.9rem; color: var(--ink-secondary); }
+  .pay-tier .cta { margin-top: auto; text-align: center; }
+  .pay-tier .cta.secondary { background: var(--surface); color: var(--brand); border: 1px solid var(--brand); }
   /* Responsive Breakpoints */
-  @media (max-width: 820px) {
-    .facts-strip {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .check-grid,
-    .steps-grid,
-    .bpp-row {
-      grid-template-columns: 1fr;
-    }
-
-    .sample-entries,
-    .deliverables-grid,
-    .pricing-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .shared-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  @media (max-width: 1080px) {
+    .hero h1 { font-size: 2.25rem; }
+    .nav { display: none; }
   }
-
-  @media (max-width: 520px) {
-    .container {
-      padding: 0 1rem;
-    }
-
-    .header-inner {
-      padding: 0.7rem 0;
-      gap: 0.45rem;
-    }
-
-    .nav-links {
-      gap: 0.75rem;
-      font-size: 0.81rem;
-    }
-
-    .hero {
-      padding: 1.35rem 0 1.75rem;
-    }
-
-    .eyebrow-row {
-      margin-bottom: 0.65rem;
-      gap: 0.35rem;
-      font-size: 0.8rem;
-    }
-
-    h1 {
-      font-size: 1.62rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .hero-lead {
-      font-size: 0.96rem;
-      line-height: 1.52;
-      margin-bottom: 1rem;
-    }
-
-    section.band {
-      padding: 2.35rem 0;
-    }
-
-    .facts-strip {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      padding: 0.75rem 0.85rem;
-      gap: 0.55rem 0.7rem;
-      margin-bottom: 1.05rem;
-    }
-
-    .fact-value {
-      font-size: 0.94rem;
-    }
-
-    .fact-sub {
-      font-size: 0.76rem;
-    }
-
-    .cta-group {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0.55rem;
-    }
-
-    .cta {
-      width: 100%;
-      padding: 0.76rem 1rem;
-    }
-
-    .shared-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .price-card {
-      padding: 1.25rem 1.1rem;
-    }
-
-    .limits-box {
-      padding: 1.2rem 1.1rem;
-    }
-
-    .grade-list li {
-      grid-template-columns: 2.8rem 1fr;
-      gap: 0.55rem;
-    }
+  @media (max-width: 820px) {
+    .hero { padding: 2.75rem 0 2.5rem; }
+    .hero h1 { font-size: 2rem; }
+    .hero-cta { flex-direction: column; align-items: stretch; }
+    .facts-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .deliverables-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .nav { display: none; }
+    .header-inner { padding: 1rem 0; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .nav { display: none; }
+    .pay-grid { grid-template-columns: 1fr; }
+    .pay-tiers { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
-
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand-mark" href="#top">
-      <span class="brand-name">Deal-Ready</span>
-      <span class="brand-by">by CapsAGI</span>
-    </a>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#what-we-check">Scope</a>
-      <a href="#sample">Sample</a>
-      <a href="#pricing" class="nav-jump">Pricing</a>
-      <a href="#how-it-works">Process</a>
-      <a href="#faq">FAQ</a>
+    <a class="brand" href="../index.html">Caps<span>AGI</span> <small>Security Checkup</small></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" class="active">Deal-Ready Report</a>
+      <a href="../sample-report.html">Sample Report</a>
+      <a href="../index.html">Security Checkup</a>
+      <a href="../terms.html">Terms</a>
+      <a href="../refund.html">Refund Policy</a>
     </nav>
+    <a class="nav-cta" href="mailto:shisanyue950901@gmail.com?subject=Request%20a%20Report%20—%20Deal-Ready&amp;body=Hi%2C%0A%0AI%27d%20like%20a%20report.%20Here%27s%20my%20listing%20link%3A%0A">Request a Report</a>
   </div>
 </header>
-
-<main id="top">
-
+<main>
   <!-- HERO -->
-  <section class="hero" aria-labelledby="hero-title">
+  <section class="hero">
     <div class="container">
-      <div class="eyebrow-row">
-        <span>Pre-Sale Due-Diligence Report for Small SaaS</span>
-        <span class="platform-pill">Acquire.com</span>
-        <span class="platform-pill">Flippa</span>
-        <span class="platform-pill">Tiny Acquisitions</span>
-      </div>
-
-      <h1 id="hero-title">Your SaaS is listed. Buyers are doing diligence. Be ready before they ask.</h1>
-
-      <p class="hero-lead">
-        <strong>Deal-Ready</strong> reviews your revenue, growth, and technical surface — with every claim backed by sources a buyer can re-run.
-      </p>
-
-      <div class="facts-strip" aria-label="Key service specifications">
-        <div class="fact-item">
-          <span class="fact-label">Seller Report</span>
-          <span class="fact-value">$299 USD</span>
-          <span class="fact-sub">One-time payment</span>
-        </div>
-        <div class="fact-item">
-          <span class="fact-label">Buyer Report</span>
-          <span class="fact-value">$499 USD</span>
-          <span class="fact-sub">One-time · + valuation check</span>
-        </div>
-        <div class="fact-item">
-          <span class="fact-label">Turnaround</span>
-          <span class="fact-value">5 business days</span>
-          <span class="fact-sub">Private delivery to you</span>
-        </div>
-        <div class="fact-item">
-          <span class="fact-label">Deliverable</span>
-          <span class="fact-value">Full 8-section report</span>
-          <span class="fact-sub">L0–L4 graded + re-run commands</span>
-        </div>
-      </div>
-
-      <div class="cta-group">
+      <p class="hero-kicker">Deal-Ready Report · Pre-Sale Inspection</p>
+      <h1>Your listing isn’t “verified” until an independent review says it is.</h1>
+      <p class="hero-lead">Deal-Ready is an independent due-diligence report for small SaaS businesses listed on Acquire.com, Flippa, or Tiny Acquisitions. We verify the code, the money, the listing, and the valuation — so you can buy, sell, or walk away with evidence, not seller claims.</p>
+      <div class="hero-cta">
         <a class="cta" href="#pay">Order Seller Report — $299</a>
-        <a class="cta secondary" href="mailto:shisanyue950901@gmail.com">Request a Report</a>
+        <a class="cta ghost" href="mailto:shisanyue950901@gmail.com?subject=Request%20a%20Report%20—%20Deal-Ready&amp;body=Hi%2C%0A%0AI%27d%20like%20a%20report.%20Here%27s%20my%20listing%20link%3A%0A">Request a Report</a>
+        <a class="cta ghost" href="#pricing">View Buyer’s Report — $499</a>
       </div>
-      <p class="cta-note">
-        <strong>Order</strong> goes straight to one-time checkout. <strong>Request a Report</strong> opens an email where you send your listing link for manual intake.
-      </p>
-      <p class="buyer-shortcut">
-        Evaluating a SaaS acquisition? <a href="#buyer-report">See Buyer Report ($499) ↓</a>
-      </p>
+      <p class="cta-note">Pay with USDT — see Pay with USDT below. Request a Report opens your email — send your listing link and we confirm scope and timing.</p>
+      <div class="facts-strip">
+        <div class="fact">
+          <div class="fact-label">Seller Price</div>
+          <div class="fact-value">$299</div>
+          <div class="fact-sub">One-time · Full report</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Buyer Price</div>
+          <div class="fact-value">$499</div>
+          <div class="fact-sub">One-time · + valuation check</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Turnaround — full reports</div>
+          <div class="fact-value">5 business days</div>
+          <div class="fact-sub">Full reports · Private delivery</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Deliverable — full reports</div>
+          <div class="fact-value">Full 8-section report</div>
+          <div class="fact-sub">L0–L4 · RAG verdict</div>
+        </div>
+      </div>
     </div>
   </section>
-
-  <!-- WHAT WE CHECK + WHAT YOU GET -->
-  <section id="what-we-check" class="band" aria-labelledby="check-heading">
+  <!-- DELIVERABLES -->
+  <section class="band" aria-labelledby="deliverables-heading">
     <div class="container">
-      <p class="section-kicker">Inspection Scope &amp; Deliverables</p>
-      <h2 id="check-heading">What we check</h2>
-      <p class="section-intro">
-        We run a structured diligence checklist across the three areas where small SaaS deals stall or re-trade — before a buyer's analyst finds them first.
-      </p>
-
-      <div class="check-grid">
-        <article class="check-card">
-          <span class="check-num">01</span>
-          <h3>Revenue structure</h3>
-          <p class="check-summary">Test whether claimed MRR actually reconciles as recurring revenue.</p>
-          <ul class="check-list">
-            <li>Decompose subscription vs. one-time revenue, refunds, and churn.</li>
-            <li>Inspect customer concentration and public pricing tiers.</li>
-            <li>Reconcile subscriber count × ARPU against claimed MRR.</li>
-          </ul>
-        </article>
-
-        <article class="check-card">
-          <span class="check-num">02</span>
-          <h3>Growth authenticity</h3>
-          <p class="check-summary">Cross-check your growth story against independent public timelines.</p>
-          <ul class="check-list">
-            <li>Compare listing claims against Web Archive and domain RDAP history.</li>
-            <li>Review public traffic signals and review/install trajectories.</li>
-            <li>Prove solid numbers — or catch gaps before a buyer rejects your offer.</li>
-          </ul>
-        </article>
-
-        <article class="check-card">
-          <span class="check-num">03</span>
-          <h3>Technical surface</h3>
-          <p class="check-summary">Surface publicly visible technical risks that kill deals late.</p>
-          <ul class="check-list">
-            <li>Check public repositories and bundles for exposed keys and stale dependencies.</li>
-            <li>Review tenant-isolation signals, domain setup, and certificate basics.</li>
-            <li>Flag handover risks early while fixes remain fast and inexpensive.</li>
-          </ul>
-        </article>
-      </div>
-
-      <!-- Standalone Callout separated cleanly from inspection items -->
-      <div class="evidence-callout" role="note" aria-label="Evidence grading and non-audit notice">
-        <strong>Graded evidence, never disguised as an audit.</strong> Every finding carries a source and an evidence grade (L0–L4). Public observations, inferences, and items only you can provide are labeled separately — we never dress up public data as a financial audit.
-      </div>
-
-      <!-- Deliverables clearly separated from Checks -->
-      <div class="deliverables-wrap" aria-labelledby="deliverables-heading">
-        <h3 id="deliverables-heading" class="deliverables-title">What you get with every report</h3>
-        <div class="deliverables-grid">
-          <div class="deliverable-item">
-            <h4>Full 8-Section Diligence Report</h4>
-            <p>Covers Target Snapshot, Revenue Structure, Growth Authenticity, Technical Surface, and Red Flags &amp; Open Questions (plus Valuation Sanity Check on Buyer Reports).</p>
-          </div>
-          <div class="deliverable-item">
-            <h4>Evidence Register (Source + Re-Run Commands)</h4>
-            <p>Every graded claim is logged with its exact source URL, timestamp, layer label, and copy-paste command so any buyer can verify it independently.</p>
-          </div>
-          <div class="deliverable-item">
-            <h4>Buyer-Proof Pack</h4>
-            <p>For every red flag and open question: the exact question a buyer will ask, the specific material to prepare, and the evidence that closes the question.</p>
-          </div>
-          <div class="deliverable-item">
-            <h4>30-Minute Risk Walkthrough <span class="tag-inline">Optional · Included</span></h4>
-            <p>An optional 30-minute walkthrough after delivery to review the top risks, clarify evidence grades, and prioritize fixes before buyer conversations.</p>
-          </div>
+      <p class="section-kicker">What you get</p>
+      <h2 id="deliverables-heading">What you get with every full report (Seller &amp; Buyer)</h2>
+      <p class="section-intro">Every full report is a structured evidence pack — not a pass/fail stamp. Quick Check is different: a 3-page checklist, delivered in 48 hours — not the full 8-section report.</p>
+      <div class="deliverables-grid">
+        <div class="check-card">
+          <span class="check-icon">✓</span>
+          <h3>L0–L3 Technical Reality</h3>
+          <p>4 of 8 sections — code review, architecture, security, and operational checks. Real vulnerabilities, not generic warnings.</p>
+        </div>
+        <div class="check-card">
+          <span class="check-icon">✓</span>
+          <h3>L4 Financial Reality</h3>
+          <p>Checks whether the listing’s P&amp;L matches Stripe/subscription payouts and the owner’s numbers — and flags revenue that doesn’t reconcile.</p>
+        </div>
+        <div class="check-card">
+          <span class="check-icon">✓</span>
+          <h3>Valuation &amp; Market Reality</h3>
+          <p>Compares the asking price against comparable sales and market benchmarks — and names the multiple the deal actually supports.</p>
+        </div>
+        <div class="check-card">
+          <span class="check-icon">✓</span>
+          <h3>Claims</h3>
+          <p>Every seller claim is tested against evidence: traffic, users, growth, churn, and technical claims — verified or flagged.</p>
+        </div>
+        <div class="check-card">
+          <span class="check-icon">✓</span>
+          <h3>RAG Verdict</h3>
+          <p>Red / Amber / Green verdict on the whole deal, with the evidence and reasoning behind it.</p>
+        </div>
+        <div class="check-card">
+          <span class="check-icon">✓</span>
+          <h3>Next Steps</h3>
+          <p>What to fix, what to negotiate, or why to walk away — in plain language you can act on.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- TRUST: SANITIZED SAMPLE EXCERPT + L0-L4 LEGEND -->
-  <section id="sample" class="band subtle" aria-labelledby="sample-heading">
-    <div class="container">
-      <p class="section-kicker">Verifiable Output</p>
-      <h2 id="sample-heading">What the evidence looks like inside a report</h2>
-      <p class="section-intro">
-        Below is a condensed structural excerpt from our standard report template — showing how each finding pairs a claim, source, evidence grade, and re-runnable command, alongside the Buyer-Proof Pack format.
-      </p>
-
-      <div class="sample-shell" aria-label="Sanitized report sample excerpt">
-        <div class="sample-header">
-          <span class="sample-doc-title">Deal-Ready Report — {{TARGET_NAME}}</span>
-          <span class="sample-badge">Sample Excerpt · Template Structure</span>
-        </div>
-
-        <div class="sample-meta">
-          <span>Listing: <code>{{PLATFORM}}</code></span>
-          <span>Report ID: <code>DR-{{YYYYMMDD}}-{{SEQ}}</code></span>
-          <span>Scope: <code>Public data + optional seller exports</code></span>
-        </div>
-
-        <div class="sample-entries">
-          <div class="evidence-entry">
-            <div class="entry-top">
-              <span class="entry-id-group">
-                <span class="entry-id">E-01</span>
-                <span class="layer-chip">[inference]</span>
-              </span>
-              <span class="grade-badge">Grade L1</span>
-            </div>
-            <p class="entry-claim">Implied ARPU (claimed MRR ÷ claimed subscribers) compared with public recurring and lifetime pricing tiers — derived from unverified listing figures (L0), assuming pure recurring revenue without undisclosed discounts.</p>
-            <p class="entry-source">Basis: seller-claimed MRR &amp; subscribers on <code>{{LISTING_URL}}</code> (L0) + public tiers on <code>{{TARGET_PRICING_URL}}</code> (L1)</p>
-            <code class="cmd-box">curl -sL {{LISTING_URL}} | grep -iE "mrr|revenue|subscriber|customer"
-curl -sL {{TARGET_PRICING_URL}} | grep -iE "month|annual|lifetime|\$[0-9]+"</code>
-          </div>
-
-          <div class="evidence-entry">
-            <div class="entry-top">
-              <span class="entry-id-group">
-                <span class="entry-id">E-02</span>
-                <span class="layer-chip">[public observation]</span>
-              </span>
-              <span class="grade-badge">Grade L2</span>
-            </div>
-            <p class="entry-claim">Claimed launch &amp; growth timeline cross-checked against domain registration (RDAP) and Web Archive captures.</p>
-            <p class="entry-source">Source: <code>Web Archive CDX API</code> + <code>RDAP registry</code></p>
-            <code class="cmd-box">curl -s "https://web.archive.org/cdx/search/cdx?url={{TARGET_DOMAIN}}&amp;output=json&amp;limit=5"</code>
-          </div>
-
-          <div class="evidence-entry">
-            <div class="entry-top">
-              <span class="entry-id-group">
-                <span class="entry-id">E-03</span>
-                <span class="layer-chip">[public observation]</span>
-              </span>
-              <span class="grade-badge">Grade L3</span>
-            </div>
-            <p class="entry-claim">Domain &amp; certificate basics: TLS certificate subject &amp; validity dates, plus SPF and DMARC DNS records.</p>
-            <p class="entry-source">Source: <code>Live TLS &amp; DNS probes for {{TARGET_DOMAIN}} at cut-off timestamp</code></p>
-            <code class="cmd-box">openssl s_client -servername {{TARGET_DOMAIN}} -connect {{TARGET_DOMAIN}}:443 &lt;/dev/null 2&gt;/dev/null | openssl x509 -noout -subject -dates
-dig +short TXT {{TARGET_DOMAIN}} | grep -i "v=spf1"
-dig +short TXT _dmarc.{{TARGET_DOMAIN}}</code>
-          </div>
-
-          <div class="evidence-entry">
-            <div class="entry-top">
-              <span class="entry-id-group">
-                <span class="entry-id">E-04</span>
-                <span class="layer-chip">[seller to provide]</span>
-              </span>
-              <span class="grade-badge l0">L0 → L4</span>
-            </div>
-            <p class="entry-claim">Net refund rate, logo/revenue churn, and top-5 customer share cannot be verified from public data alone.</p>
-            <p class="entry-source">Closes with: <code>Payment-processor export (Stripe/Paddle) reconciled within 5%</code></p>
-            <code class="cmd-box">Artifact request: 12-month subscription export with plan names &amp; start/end dates</code>
-          </div>
-        </div>
-
-        <div class="sample-bpp">
-          <p class="sample-bpp-label">Buyer-Proof Pack Format (Excerpt Row)</p>
-          <div class="bpp-row">
-            <div class="bpp-col">
-              <strong>What a buyer will ask</strong>
-              <span>"Is the MRR actually recurring, or is it one-time revenue annualized?"</span>
-            </div>
-            <div class="bpp-col">
-              <strong>What to prepare</strong>
-              <span>12 months of MRR movement split by subscription, one-time, and lifetime plans.</span>
-            </div>
-            <div class="bpp-col">
-              <strong>Evidence that closes it</strong>
-              <span>Stripe/Chargebee/Paddle export with plan names intact, reconciled to claimed MRR within 5% <span class="grade-badge">L4</span></span>
-            </div>
-          </div>
-        </div>
-
-        <p class="sample-caption">
-          Excerpt shown above uses our anonymized report template (no live client listings are published). Full reports cover all 8 sections plus a complete Evidence Register.
-        </p>
-      </div>
-
-      <!-- L0-L4 Evidence Grade Legend -->
-      <div class="legend-card" aria-labelledby="legend-heading">
-        <div class="legend-header">
-          <h3 id="legend-heading">Evidence Grade Legend (L0–L4)</h3>
-          <span class="legend-note">Public data never reaches L4 on its own.</span>
-        </div>
-        <ul class="grade-list">
-          <li>
-            <span class="grade-badge l0">L0</span>
-            <span><strong>Seller or broker assertion only.</strong> No citable source — quoted, never relied on.</span>
-          </li>
-          <li>
-            <span class="grade-badge">L1</span>
-            <span><strong>Single public observation.</strong> One live page or API response, independently re-runnable.</span>
-          </li>
-          <li>
-            <span class="grade-badge">L2</span>
-            <span><strong>Public timeline or cross-check.</strong> Two or more independent sources that agree or conflict over time.</span>
-          </li>
-          <li>
-            <span class="grade-badge">L3</span>
-            <span><strong>Reproducible technical verification.</strong> A direct probe returned a definitive status, record, or bundle response.</span>
-          </li>
-          <li>
-            <span class="grade-badge">L4</span>
-            <span><strong>Reconciled primary data.</strong> Seller-provided export reconciled against public observations — the only grade carrying a financial conclusion.</span>
-          </li>
-        </ul>
-        <p class="layer-summary">
-          <strong>Layer labels:</strong> Every entry is also tagged <code>[public observation]</code>, <code>[inference]</code> (with explicit assumptions), or <code>[seller to provide]</code>.
-        </p>
-      </div>
-    </div>
-  </section>
-
   <!-- PRICING -->
-  <section id="pricing" class="band" aria-labelledby="pricing-heading">
+  <section id="pricing" class="band subtle" aria-labelledby="pricing-heading">
     <div class="container">
       <p class="section-kicker">Transparent One-Time Pricing</p>
       <h2 id="pricing-heading">Choose your report</h2>
-      <p class="section-intro">
-        Three fixed-price tiers tailored to your side of the transaction. Both deliver the same graded, re-runnable evidence standard in 5 business days.
-      </p>
-
+      <p class="section-intro">Three fixed-price tiers tailored to your side of the transaction. The Seller and Buyer Reports are full reports: the same graded, re-runnable evidence standard, delivered in 5 business days. Quick Check is a 3-page checklist, delivered in 48 hours.</p>
       <div class="pricing-grid">
-        <!-- Quick Check Card -->
-      <article id="quick-check" class="price-card" aria-labelledby="quick-check-title">
-        <div class="role-row">
-          <span class="role-badge">Quick Check</span>
-          <span class="role-hint">Start here — lowest-cost entry</span>
-        </div>
-        <h3 id="quick-check-title">Deal-Ready Quick Check</h3>
-        <div class="price-amount-row">
-          <span class="price-amount">$99</span>
-          <span class="price-term">USD · one-time</span>
-        </div>
-        <p class="card-audience">
-          <strong>For founders who want a fast first pass:</strong> find out what buyers and brokers will flag first — before you pay for a full report.
-        </p>
-        <ul class="card-diff-list">
-          <li><strong>3-page checklist report:</strong> a concise, 3-page checklist-style quick check.</li>
-          <li><strong>Fatal items first:</strong> the fatal items buyers and brokers check first.</li>
-          <li><strong>48-hour delivery:</strong> delivered within 48 hours.</li>
-          <li><strong>$99 fully credited:</strong> $99 fully credited toward the $299 Seller Report if you upgrade within 7 days.</li>
-        </ul>
-        <div class="card-actions">
-          <a class="cta" href="#pay">Pay with USDT</a>
-          <a class="cta secondary" href="mailto:shisanyue950901@gmail.com">Request a Report</a>
-          <p class="card-microcopy">Order goes to one-time checkout. $99 is fully credited toward the $299 Seller Report if you upgrade within 7 days.</p>
-        </div>
-      </article>
-
-      <!-- Seller Report Card (Featured) -->
-        <article id="seller-report" class="price-card featured" aria-labelledby="seller-title">
-          <div class="role-row">
-            <span class="role-badge">Seller</span>
-            <span class="role-hint">Recommended for listed founders</span>
-          </div>
-          <h3 id="seller-title">Seller Report</h3>
-          <div class="price-amount-row">
-            <span class="price-amount">$299</span>
-            <span class="price-term">USD · one-time</span>
-          </div>
-          <p class="card-audience">
-            <strong>For founders selling a SaaS:</strong> get your own house in order before buyers arrive and answer tough diligence questions on the first pass.
-          </p>
-          <ul class="card-diff-list">
-            <li><strong>One listed business</strong> on Acquire.com, Flippa, or Tiny Acquisitions.</li>
-            <li><strong>Full diligence checklist:</strong> revenue structure, growth authenticity, technical surface, and transaction readiness.</li>
-            <li><strong>Private first look:</strong> catch and fix red flags before a buyer uses them to re-trade or walk away.</li>
+        <article class="price-card">
+          <span class="role-badge neutral">Fastest · Starting point</span>
+          <h3>Quick Check</h3>
+          <p class="price-role">Get a quick signal before spending $299 on a full report.</p>
+          <p class="price">$99</p>
+          <p class="price-term">USD · one-time</p>
+          <ul>
+            <li>3-page checklist — the same four levels, at a high level</li>
+            <li>48-hour delivery</li>
+            <li>Graded red/amber/green verdict — is this deal worth a full report?</li>
+            <li>Covers code, money, listing, and valuation signals at a high level</li>
+            <li>3 days of analyst Q&amp;A by email</li>
           </ul>
-          <div class="card-actions">
-            <a class="cta" href="#pay">Pay with USDT</a>
-            <a class="cta secondary" href="mailto:shisanyue950901@gmail.com">Request a Report</a>
-            <p class="card-microcopy">Order goes to one-time checkout. Request a Report emails your listing link for intake.</p>
-          </div>
+          <a class="cta" href="#pay">Order Quick Check — $99</a>
+          <p class="price-microcopy">Pay with USDT below. $99 is fully credited toward the $299 Seller Report if you upgrade within 7 days.</p>
         </article>
-
-        <!-- Buyer Report Card -->
-        <article id="buyer-report" class="price-card" aria-labelledby="buyer-title">
-          <div class="role-row">
-            <span class="role-badge">Buyer</span>
-          </div>
-          <h3 id="buyer-title">Buyer Report</h3>
-          <div class="price-amount-row">
-            <span class="price-amount">$499</span>
-            <span class="price-term">USD · one-time</span>
-          </div>
-          <p class="card-audience">
-            <strong>For buyers evaluating a target:</strong> verify claims independently before you spend weeks in diligence or wire a deposit.
-          </p>
-          <ul class="card-diff-list">
-            <li><strong>One target SaaS business</strong> you are considering acquiring.</li>
-            <li><strong>Full diligence checklist + valuation sanity check:</strong> everything in the Seller scope plus implied-multiple and valuation stress-testing.</li>
-            <li><strong>Actionable diligence agenda:</strong> exact verification requests and closing artifacts to ask the seller for.</li>
+        <article class="price-card best">
+          <span class="role-badge">Most popular</span>
+          <h3>Seller Report</h3>
+          <p class="price-role">Full report · Recommended if your listing is live or about to go live.</p>
+          <p class="price">$299</p>
+          <p class="price-term">USD · one-time · Founding price</p>
+          <ul>
+            <li>Full 8-section report (L0–L4)</li>
+            <li>5-business-day delivery</li>
+            <li>Re-runnable evidence standard</li>
+            <li>Verdicts with severity, evidence &amp; fix steps</li>
+            <li>RAG verdict (Red / Amber / Green)</li>
+            <li>Report only — fix engagement is separate</li>
+            <li><strong>Founding price — $299:</strong> email us first to check Founding slot availability before paying; payment alone does not lock a slot.</li>
           </ul>
-          <div class="card-actions">
-            <a class="cta" href="#pay">Pay with USDT</a>
-            <a class="cta secondary" href="mailto:shisanyue950901@gmail.com">Request a Report</a>
-            <p class="card-microcopy">Order goes to one-time checkout. Request a Report emails the target listing link for intake.</p>
-          </div>
+          <a class="cta" href="#pay">Order Seller Report — $299</a>
+          <p class="price-microcopy">Pay with USDT below. Founding price: email us first to check Founding slot availability before paying — paying does not lock a slot. Request a Report emails your listing link for intake.</p>
+        </article>
+        <article class="price-card">
+          <span class="role-badge neutral">Full report</span>
+          <h3>Buyer Report</h3>
+          <p class="price-role">Full report · Best for buyers who want to negotiate or walk away.</p>
+          <p class="price">$499</p>
+          <p class="price-term">USD · one-time</p>
+          <ul>
+            <li>Full 8-section report (L0–L4)</li>
+            <li>Includes everything in the Seller Report, plus a valuation check with comparable sales</li>
+            <li>5-business-day delivery</li>
+            <li>Re-runnable evidence standard</li>
+            <li>Verdicts with severity, evidence &amp; fix steps</li>
+            <li>RAG verdict (Red / Amber / Green)</li>
+          </ul>
+          <a class="cta" href="#pay">Order Buyer Report — $499</a>
+          <p class="price-microcopy">Pay with USDT below. Request a Report emails your listing link for intake.</p>
         </article>
       </div>
-
-      <!-- Shared Features Extracted Below Both Cards -->
-      <div class="shared-box" aria-label="Included in both reports">
-        <h3>Included in both Seller &amp; Buyer reports</h3>
+      <div class="shared-box" aria-label="Included in both full reports — Seller and Buyer">
+        <h3>Included in both full reports — Seller &amp; Buyer</h3>
         <div class="shared-grid">
           <div class="shared-item">
-            <strong>5 business days</strong>
-            <span>Delivered privately to you within five business days of intake.</span>
+            <span class="check-icon">✓</span>
+            <p><strong>1. Evidence pack</strong> — full 8-section report with file-and-line evidence, verdicts, and fix steps.</p>
           </div>
           <div class="shared-item">
-            <strong>Full 8-section report</strong>
-            <span>Structured briefing + Buyer-Proof Pack + Red Flags &amp; Open Questions.</span>
+            <span class="check-icon">✓</span>
+            <p><strong>2. Severity</strong> — every finding graded Critical / High / Medium / Low, with a RAG verdict.</p>
           </div>
           <div class="shared-item">
-            <strong>Source + re-run commands</strong>
-            <span>Every conclusion ships with L0–L4 evidence grade and verification commands.</span>
+            <span class="check-icon">✓</span>
+            <p><strong>3. Re-runnable</strong> — evidence and scripts retained so the result can be reproduced.</p>
           </div>
           <div class="shared-item">
-            <strong>Optional 30-min walkthrough</strong>
-            <span>Walk through top risks and closing artifacts with us if you want one.</span>
+            <span class="check-icon">✓</span>
+            <p><strong>4. Private delivery</strong> — delivered privately to you within five business days after payment, the signed authorization, and access are all received.</p>
+          </div>
+          <div class="shared-item">
+            <span class="check-icon">✓</span>
+            <p><strong>5. Verdict you can act on</strong> — what to fix, what to negotiate, or why to walk away.</p>
+          </div>
+          <div class="shared-item">
+            <span class="check-icon">✓</span>
+            <p><strong>6. Analyst Q&amp;A</strong> — 48 hours of follow-up questions after delivery.</p>
           </div>
         </div>
-        <p class="pricing-promise">No subscription. No upsell call. One report, one price.</p>
+        <p class="pay-note" style="margin: 1rem 0 0;">Quick Check is separate: a 3-page checklist delivered in 48 hours. It does not include the full 8-section report above.</p>
       </div>
+      <p class="pricing-promise">No subscription. No upsell call. One report, one price.</p>
     </div>
   </section>
-
   <!-- PAY WITH USDT -->
-<section id="pay" class="band" style="background: #0b1e3a; color: #ffffff;" aria-labelledby="pay-heading">
-  <div class="container final-cta-inner" style="text-align: left;">
-    <h2 id="pay-heading" style="color: #ffffff;">Pay with USDT</h2>
-    <ol>
-      <li>Send the exact amount in USDT on the Tron network (TRC20) to: <code style="background: rgba(255, 255, 255, 0.12); color: #fff; padding: 0.1rem 0.35rem; border-radius: 4px; word-break: break-all;">TV5RuCCmU7zGmyS61hzgGVpWdRN8c8tLoJ</code></li>
-      <li>Email your transaction hash and the product name (Quick Check / Seller Report / Buyer Report) to <a href="mailto:shisanyue950901@gmail.com" style="color: #7dd3fc;">shisanyue950901@gmail.com</a></li>
-      <li>Work starts once the payment confirms on-chain. For the Quick Check, the 48-hour clock runs from confirmation plus your intake materials.</li>
-    </ol>
-    <p style="color: #cbd5e1;"><strong>USDT on Tron (TRC20) only — payments sent on other networks can't be credited.</strong></p>
-    <p style="color: #cbd5e1;">Prefer to pay by card? Email us and we'll send you a card checkout link.</p>
-  </div>
-</section>
-<!-- HOW IT WORKS -->
-  <section id="how-it-works" class="band subtle" aria-labelledby="how-heading">
+  <section id="pay" class="band subtle" aria-labelledby="pay-heading">
     <div class="container">
-      <p class="section-kicker">Simple Process</p>
-      <h2 id="how-heading">How it works</h2>
-      <p class="section-intro">
-        Start with just a listing link. No platform integrations or live credentials required.
-      </p>
-
+      <p class="section-kicker">Payment</p>
+      <h2 id="pay-heading">Pay with USDT</h2>
+      <p class="section-intro">Pay in USDT on the Tron (TRC20) network. Choose your tier, send the exact amount, then email us your transaction hash — we confirm receipt by email within 12 hours.</p>
+      <div class="pay-card">
+        <p class="pay-warning" role="alert"><strong>⚠ Only send USDT on the Tron (TRC20) network.</strong> Sending USDT on any other network will lose the funds — they cannot be recovered or credited.</p>
+        <div class="pay-grid">
+          <div>
+            <h3>USDT address (TRC20)</h3>
+            <div class="pay-address-box">
+              <code id="usdt-address">TV5RuCCmU7zGmyS61hzgGVpWdRN8c8tLoJ</code>
+              <button type="button" class="copy-btn" id="copy-usdt-address">Copy address</button>
+            </div>
+            <p><a href="https://tronscan.org/#/address/TV5RuCCmU7zGmyS61hzgGVpWdRN8c8tLoJ" target="_blank" rel="noopener">Verify this address on TronScan ↗</a></p>
+            <ol class="pay-steps">
+              <li><strong>Check Founding availability first (Seller Report):</strong> email us before paying to confirm a $299 Founding slot is available — paying does not lock a slot.</li>
+              <li>Send the exact amount for your tier in USDT on the Tron (TRC20) network to the address above.</li>
+              <li>Email your transaction hash using the prefilled link for your tier below, and include your listing link.</li>
+            </ol>
+            <p class="pay-note">1 USD = 1 USDT. You cover any network / withdrawal fees charged by your wallet or exchange, so please send the full tier amount.</p>
+            <p class="pay-note"><strong>Delivery clock:</strong> the delivery clock starts only when we have received all three — your USDT payment, your signed authorization, and access to the code and materials we need. From that point, Quick Check is delivered within 48 hours and full Seller / Buyer Reports within 5 business days.</p>
+            <p class="pay-note">We confirm receipt of your payment by email within 12 hours of receiving your transaction-hash email.</p>
+          </div>
+          <div class="pay-qr">
+            <img src="../usdt-qr.svg" alt="QR code for USDT (TRC20) payment address TV5RuCCmU7zGmyS61hzgGVpWdRN8c8tLoJ" width="200" height="200">
+            <p>Scan to pay with USDT (TRC20)</p>
+          </div>
+        </div>
+        <div class="pay-tiers">
+          <div class="pay-tier">
+            <h4>Quick Check — $99</h4>
+            <p>Send 99 USDT (TRC20) to the address above, then email your transaction hash.</p>
+            <a class="cta" href="mailto:shisanyue950901@gmail.com?subject=USDT%20payment%20-%20Quick%20Check%20%2499&amp;body=Hi%2C%0A%0AI%20paid%2099%20USDT%20for%20the%20Quick%20Check.%0A%0ATransaction%20hash%3A%20%0A%0AListing%20link%3A%20%0A%0AThank%20you.">Email transaction hash — Quick Check</a>
+          </div>
+          <div class="pay-tier">
+            <h4>Seller Report — $299</h4>
+            <p>Send 299 USDT (TRC20) to the address above, then email your transaction hash.</p>
+            <a class="cta secondary" href="mailto:shisanyue950901@gmail.com?subject=Founding%20slot%20availability%20-%20Seller%20Report%20%24299&amp;body=Hi%2C%0A%0APlease%20confirm%20whether%20a%20Founding%20slot%20is%20available%20for%20the%20Seller%20Report%20%28%24299%29%20before%20I%20pay.%0A%0AListing%20link%3A%20%0A%0AThank%20you.">Check Founding slot availability first</a>
+            <a class="cta" href="mailto:shisanyue950901@gmail.com?subject=USDT%20payment%20-%20Seller%20Report%20%24299&amp;body=Hi%2C%0A%0AI%20paid%20299%20USDT%20for%20the%20Seller%20Report.%0A%0ATransaction%20hash%3A%20%0A%0AListing%20link%3A%20%0A%0AThank%20you.">Email transaction hash — Seller Report</a>
+          </div>
+          <div class="pay-tier">
+            <h4>Buyer Report — $499</h4>
+            <p>Send 499 USDT (TRC20) to the address above, then email your transaction hash.</p>
+            <a class="cta" href="mailto:shisanyue950901@gmail.com?subject=USDT%20payment%20-%20Buyer%20Report%20%24499&amp;body=Hi%2C%0A%0AI%20paid%20499%20USDT%20for%20the%20Buyer%20Report.%0A%0ATransaction%20hash%3A%20%0A%0AListing%20link%3A%20%0A%0AThank%20you.">Email transaction hash — Buyer Report</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- HOW IT WORKS -->
+  <section id="how" class="band" aria-labelledby="how-heading">
+    <div class="container">
+      <p class="section-kicker">How it works</p>
+      <h2 id="how-heading">Three steps to a verified deal</h2>
       <div class="steps-grid">
-        <article class="step-card">
-          <span class="step-num">Step 01</span>
+        <div class="step-card">
+          <span class="step-number">1</span>
+          <h3>Choose your report</h3>
+          <p>Pick the report that fits your side of the deal — the three tiers are on this page. Each one covers code, money, listing, and valuation checks at its own depth.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">2</span>
           <h3>Send your listing link</h3>
-          <p>Share the public listing URL (Acquire.com, Flippa, or Tiny Acquisitions) plus any optional read-only exports you want reconciled.</p>
-        </article>
-
-        <article class="step-card">
-          <span class="step-num">Step 02</span>
-          <h3>We run the graded checklist</h3>
-          <p>We verify public data first, reconcile your optional materials second, and assign L0–L4 evidence grades with re-runnable commands.</p>
-        </article>
-
-        <article class="step-card">
-          <span class="step-num">Step 03</span>
-          <h3>Receive your report in 5 business days</h3>
-          <p>You get the complete report, Evidence Register, and Buyer-Proof Pack — plus an optional 30-minute walkthrough of the top risks.</p>
-        </article>
+          <p>Email your listing link — Acquire.com, Flippa, or Tiny Acquisitions — and any supporting details. We confirm scope, timing, and payment by email.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">3</span>
+          <h3>Receive your full report in 5 business days</h3>
+          <p>You get the complete report plus a 48-hour analyst Q&amp;A window (3 days for the Quick Check) — so you can ask what the verdict means for your price or your next step. Quick Check is a 3-page checklist, delivered in 48 hours.</p>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- HONEST LIMITS (Clearly separated from How It Works, normal contrast & body font size) -->
-  <section id="honest-limits" class="band" aria-labelledby="limits-heading">
-    <div class="container">
-      <p class="section-kicker">Scope Boundaries</p>
-      <h2 id="limits-heading">Honest limits</h2>
-      <div class="limits-box">
-        <ul class="limits-list">
-          <li>
-            <strong>Public-data and seller-provided-materials review — not a financial audit and not legal advice.</strong> We do not access non-public bank records or give legal, tax, or investment opinions.
-          </li>
-          <li>
-            <strong>Explicit evidence weights.</strong> Every finding carries an L0–L4 grade and layer label so you and your counterparty know exactly how much weight each conclusion can carry.
-          </li>
-          <li>
-            <strong>Private candor first.</strong> If your numbers are solid, the report makes them provable. If they are not, we tell you privately first — that is the point of doing this <em>before</em> a buyer does.
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section id="faq" class="band subtle" aria-labelledby="faq-heading">
     <div class="container">
-      <p class="section-kicker">Common Questions</p>
-      <h2 id="faq-heading">FAQ</h2>
-
+      <p class="section-kicker">FAQ</p>
+      <h2 id="faq-heading">Questions, answered</h2>
       <div class="faq-list">
-        <details class="faq-item" open>
-          <summary>Why not just wait for the buyer's diligence?</summary>
-          <p class="faq-answer">
-            <strong>Waiting turns a fixable gap into lost leverage.</strong> Once a buyer uncovers a red flag during exclusivity, it costs you price, time, or the deal itself. The same flag found by you first becomes a quick fix or a prepared, evidence-backed answer.
-          </p>
+        <details class="faq-item">
+          <summary>What do you check in a Deal-Ready Report?</summary>
+          <p>We run a four-level check: L0–L3 Technical Reality, L4 Financial Reality, Valuation &amp; Market Reality, and Claims. The verdict is RAG — Red / Amber / Green — with evidence and next steps. The full Seller and Buyer Reports cover all eight sections in depth; the Quick Check is a 3-page checklist covering the same four levels at a high level.</p>
         </details>
-
+        <details class="faq-item">
+          <summary>When does the delivery clock start?</summary>
+          <p>The delivery clock starts only when we have received all three: (1) your USDT payment, (2) your signed authorization, and (3) access to the code and materials we need. From that point, Quick Check is delivered within 48 hours and full Seller and Buyer Reports within 5 business days. Payment alone does not start the clock.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I check Founding slot availability?</summary>
+          <p>The Seller Report is $299 at the Founding price. Email us first to check whether a Founding slot is available before you pay — paying does not lock a slot. Use the “Check Founding slot availability” link in the Pay with USDT section, or email shisanyue950901@gmail.com.</p>
+        </details>
         <details class="faq-item">
           <summary>What do you need from me?</summary>
-          <p class="faq-answer">
-            <strong>Your listing link is enough to start.</strong> Read-only analytics or revenue exports (such as Stripe, Paddle, or GA4) are optional and simply upgrade relevant findings toward L4 evidence grades.
-          </p>
+          <p>Your listing link is enough to start. We may ask for a read-only code walkthrough, subscription/payment records, and seller claims — whatever is needed to verify the deal. The delivery clock starts only when payment, the signed authorization, and access are all received.</p>
         </details>
-
         <details class="faq-item">
-          <summary>Do you contact my buyers or the platform?</summary>
-          <p class="faq-answer">
-            <strong>No — never.</strong> The report is prepared privately for you, delivered directly to you, and shared only if and when you decide.
-          </p>
+          <summary>What happens if the report is Red?</summary>
+          <p>A Red verdict means the deal has material risks — the report explains what they are and what would need to change. You can use it to renegotiate, ask the seller to fix the issues, or walk away with evidence.</p>
         </details>
       </div>
     </div>
   </section>
-
-  <!-- BOTTOM CTA BAND -->
-  <section class="final-cta" aria-labelledby="final-cta-heading">
-    <div class="container final-cta-inner">
-      <h2 id="final-cta-heading">Walk into buyer diligence with proof already assembled.</h2>
-      <p>
-        One-time fixed price, 5 business days turnaround, zero subscription. Order directly or email your listing link to start intake.
-      </p>
-      <div class="cta-group">
+  <!-- FINAL CTA -->
+  <section class="band final-cta" aria-labelledby="final-cta-heading">
+    <div class="container">
+      <h2 id="final-cta-heading">Ready to verify your deal before you buy or sell?</h2>
+      <p>One-time fixed price — full reports in 5 business days, Quick Check in 48 hours — zero subscription. Pay with USDT below, or email your listing link to start intake.</p>
+      <div class="hero-cta">
         <a class="cta" href="#pay">Order Seller Report — $299</a>
-        <a class="cta" href="#pay">Order Buyer Report — $499</a>
-        <a class="cta secondary" href="mailto:shisanyue950901@gmail.com">Request a Report</a>
+        <a class="cta ghost" href="mailto:shisanyue950901@gmail.com?subject=Request%20a%20Report%20—%20Deal-Ready&amp;body=Hi%2C%0A%0AI%27d%20like%20a%20report.%20Here%27s%20my%20listing%20link%3A%0A">Request a Report</a>
       </div>
-      <p class="cta-note">
-        <strong>Order</strong> links go directly to one-time checkout. <strong>Request a Report</strong> opens an email to send your listing link for manual intake.
-      </p>
+      <p class="cta-note">Order links go to Pay with USDT below.</p>
     </div>
   </section>
-
 </main>
-
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <p><strong>Deal-Ready</strong> is a CapsAGI service. Private diligence reports — never shared with buyers or platforms.</p>
-    <p>Questions or manual intake: <a href="mailto:shisanyue950901@gmail.com">shisanyue950901@gmail.com</a></p>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../index.html">Caps<span>AGI</span> <small>Security Checkup</small></a>
+        <p class="small" style="color: var(--ink-secondary); font-size: 0.95rem;">Independent due-diligence and security reviews for small SaaS.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Deal-Ready Report</a></li>
+          <li><a href="../sample-report.html">Sample Report</a></li>
+          <li><a href="../index.html">Security Checkup</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+          <li><a href="../refund.html">Refund Policy</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:shisanyue950901@gmail.com">shisanyue950901@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CapsAGI Security Checkup. Independent review service — not affiliated with Acquire.com, Flippa, or Tiny Acquisitions.</p>
+    </div>
   </div>
 </footer>
-
+<script>
+  (function () {
+    var btn = document.getElementById('copy-usdt-address');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var address = 'TV5RuCCmU7zGmyS61hzgGVpWdRN8c8tLoJ';
+      function done() { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Copy address'; }, 2000); }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = address;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) { btn.textContent = 'Copy failed — select the address'; }
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(address).then(done, fallback);
+      } else { fallback(); }
+    });
+  })();
+</script>
 </body>
 </html>
