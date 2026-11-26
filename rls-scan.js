@@ -156,7 +156,11 @@
   function isWideOpen(expr) {
     if (expr == null) return false;
     var e = stripOuterParens(String(expr).toLowerCase().replace(/\s+/g, ' ').trim());
-    if (e === 'true' || e === '1=1' || e === '1 = 1') return true;
+    e = stripOuterParens(e.replace(/::\s*(boolean|bool)\b/g, '').trim()); // true::boolean
+    if (e === 'true') return true;
+    var numEq = e.match(/^(\d+)\s*=\s*(\d+)$/);
+    if (numEq && numEq[1] === numEq[2]) return true; // 1=1, 2=2, ...
+    if (/^exists\s*\(/.test(e) && !/auth\./.test(e)) return true; // uncorrelated EXISTS over data is always true in practice
     if (/^auth\.uid\s*\(\s*\)\s+is\s+not\s+null$/.test(e)) return true;
     if (/^auth\.role\s*\(\s*\)\s*=\s*$/.test(e)) return true; // ='authenticated' with literal blanked
     var ors = splitTopLevel(e, 'or');
@@ -216,12 +220,19 @@
     });
 
     // ---- policies ----
-    var rePolicy = new RegExp('create\\s+policy\\s+(?:"[^"]*"|[A-Za-z_][\\w]*)\\s+on\\s+' + NAME_RE, 'gi');
+    function normName(raw) { return raw.charAt(0) === '"' ? raw.slice(1, -1) : raw.toLowerCase(); }
+    var rePolicy = new RegExp('create\\s+policy\\s+("[^"]*"|[A-Za-z_][\\w]*)\\s+on\\s+' + NAME_RE, 'gi');
     while ((m = rePolicy.exec(text))) {
       var pst = extractStatement(text, m.index);
       var rest = pst.body.slice(m[0].length); // after: create policy <name> on <table>
-      policies.push(parsePolicy(normTable(m[1]), rest, pst.body, lineOf(m.index)));
+      policies.push(parsePolicy(normTable(m[2]), rest, pst.body, lineOf(m.index), normName(m[1]), m.index));
     }
+    var reDropPol = new RegExp('drop\\s+policy\\s+(?:if\\s+exists\\s+)?("[^"]*"|[A-Za-z_][\\w]*)\\s+on\\s+' + NAME_RE, 'gi');
+    var polDrops = [];
+    while ((m = reDropPol.exec(text))) polDrops.push({ idx: m.index, name: normName(m[1]), table: normTable(m[2]) });
+    if (polDrops.length) policies = policies.filter(function (p) {
+      return !polDrops.some(function (d) { return d.idx > p.idx && d.table === p.table && d.name === p.name; });
+    });
     // ---- alter policy (later loosening) ----
     var reAlterPol = new RegExp('alter\\s+policy\\s+(?:"[^"]*"|[A-Za-z_][\\w]*)\\s+on\\s+' + NAME_RE, 'gi');
     while ((m = reAlterPol.exec(text))) {
@@ -245,7 +256,7 @@
       return extractParen(rest, mm.index + mm[0].length - 1);
     }
 
-    function parsePolicy(table, rest, rawBody, line) {
+    function parsePolicy(table, rest, rawBody, line, name, idx) {
       var low = rest.toLowerCase();
       var cmdM = low.match(/\bfor\s+(all|select|insert|update|delete)\b/);
       var cmd = cmdM ? cmdM[1] : 'all';
@@ -260,7 +271,7 @@
       if (usingExpr == null && checkExpr == null) wide = true; // PG default: permissive true
       if (cmd === 'update' && usingExpr != null && checkExpr == null && isWideOpen(usingExpr)) wide = true;
       return {
-        table: table, body: rawBody, line: line, cmd: cmd, roles: roles,
+        table: table, body: rawBody, line: line, name: name, idx: idx, cmd: cmd, roles: roles,
         usingExpr: usingExpr, checkExpr: checkExpr, wide: wide,
         scopedByUid: /auth\.uid\s*\(\s*\)/.test(low)
       };
