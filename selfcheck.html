@@ -113,7 +113,7 @@ function esc(s) {
 }
 
 function render(r) {
-  if (!r.stats.tables && !r.findings.length) {
+  if (!r.stats.tables && !r.stats.policies && !r.findings.length) {
     $out.innerHTML = '<p class="meta">No CREATE TABLE or CREATE POLICY statements parsed. Make sure you pasted SQL, not JSON or TypeScript.</p>';
     return;
   }
