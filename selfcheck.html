@@ -3,150 +3,140 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Supabase RLS Policy Check — Free Offline Scanner | Bremta</title>
-<meta name="description" content="Free Supabase RLS policy check: paste your migrations and run an offline security scan for USING (true) policies, policies missing a TO clause, tables with RLS never enabled, and leaked keys. A migrations security scan that runs in your browser: no upload, no account, no network.">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-DTolB2C7mTG3lt9Sb9iZlErFjgU/9ZPtDHT/w7JhHgU='; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<title>Website Security Self-Check — Free Offline Scanner | Bremta</title>
+<meta name="description" content="Free website security self-check: paste your SQL migrations, Firebase rules, JS/ENV config, or HTTP response headers for an offline browser scan. Checks RLS, leaked keys, webhook verification, API auth, CORS, and hardening headers — no upload, no account, no vanity score.">
 <style>
-  :root { --bg:#0b0f14; --panel:#121821; --line:#1f2937; --fg:#e5e7eb; --dim:#8b98a9;
-          --crit:#f0553f; --high:#f0a13f; --ok:#3fb27f; --acc:#4f9cf9; }
-  * { box-sizing:border-box }
-  body { margin:0; background:var(--bg); color:var(--fg);
-         font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
-  .wrap { max-width:900px; margin:0 auto; padding:32px 20px 72px; }
-  h1 { font-size:24px; margin:0 0 6px; letter-spacing:-.02em; }
-  .sub { color:var(--dim); margin:0 0 22px; font-size:14px; }
-  textarea { width:100%; min-height:240px; resize:vertical; padding:14px; border-radius:10px;
-             border:1px solid var(--line); background:var(--panel); color:var(--fg);
-             font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace; }
-  .row { display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 26px; align-items:center; }
-  button { cursor:pointer; border-radius:8px; border:1px solid var(--line); background:var(--panel);
-           color:var(--fg); padding:10px 16px; font-size:14px; }
-  button.primary { background:var(--acc); border-color:var(--acc); color:#06101d; font-weight:600; }
-  button:hover { filter:brightness(1.12); }
-  .score { display:flex; align-items:baseline; gap:12px; margin:0 0 4px; }
-  .score b { font-size:40px; letter-spacing:-.03em; }
-  .meta { color:var(--dim); font-size:13px; margin:0 0 20px; }
-  .card { border:1px solid var(--line); border-left-width:3px; border-radius:8px;
-          padding:14px 16px; margin:0 0 12px; background:var(--panel); }
-  .card.critical { border-left-color:var(--crit); }
-  .card.high { border-left-color:var(--high); }
-  .card.medium { border-left-color:var(--dim); }
-  .tag { font:600 11px/1 ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; }
-  .card.critical .tag { color:var(--crit); } .card.high .tag { color:var(--high); }
-  .title { font-weight:600; margin:6px 0 8px; }
-  code.ev { display:block; white-space:pre-wrap; word-break:break-all; background:#0a0e13; border:1px solid var(--line);
-            border-radius:6px; padding:8px 10px; font:12px/1.5 ui-monospace,monospace; color:#a9b6c7; }
-  .kv { color:var(--dim); font-size:13px; margin:8px 0 0; }
-  .kv b { color:var(--fg); font-weight:600; }
-  .cta { margin-top:34px; padding:18px; border:1px solid var(--line); border-radius:10px; background:#0e141c; }
-  .cta h2 { font-size:17px; margin:0 0 8px; }
-  .cta p { margin:0 0 12px; color:var(--dim); font-size:14px; }
-  .cta a, .sub a { color:var(--acc); }
-  .btn { display:inline-block; background:var(--acc); color:#06101d; font-weight:600;
-         padding:9px 16px; border-radius:8px; text-decoration:none; margin:2px 8px 2px 0; }
-  .btn.ghost { background:transparent; color:var(--acc); border:1px solid var(--acc); }
-  .empty { color:var(--ok); }
-  footer { margin-top:40px; color:var(--dim); font-size:12px; border-top:1px solid var(--line); padding-top:14px; }
-.brand{display:flex;align-items:baseline;gap:.6rem;font-size:1.4rem;font-weight:800;color:#e5e7eb;} .brand .tagline{font-size:.95rem;font-weight:400;color:#8b98a9;} </style>
+:root{--bg:#0b0f14;--panel:#121821;--line:#293647;--fg:#e5e7eb;--dim:#a5b2c3;--red:#ff8271;--orange:#ffc071;--blue:#8bc5ff;--acc:#87bdff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.65 system-ui,sans-serif}.wrap{max-width:1020px;margin:auto;padding:32px 20px 64px}header{border-bottom:1px solid var(--line);margin-bottom:28px;padding-bottom:22px}.brand{font-weight:800;letter-spacing:.08em;color:var(--acc)}h1{font-size:clamp(24px,4vw,36px);line-height:1.3;margin:8px 0}h2{font-size:20px}h3{font-size:17px;margin:0 0 8px}.sub,.meta,.kv{color:var(--dim)}.meta{font-size:13px}.panel,.card,.cta{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}textarea{width:100%;min-height:175px;resize:vertical;padding:13px;background:#090d12;color:var(--fg);border:1px solid var(--line);border-radius:7px;font:13px/1.55 ui-monospace,monospace}input[type=text],select{width:100%;max-width:100%;padding:9px;margin-top:4px;background:#090d12;color:var(--fg);border:1px solid var(--line);border-radius:6px}label{display:block;margin:10px 0}label.inline{display:flex;gap:8px;align-items:start}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:16px 0}button,.btn{cursor:pointer;padding:11px 17px;border-radius:7px;border:1px solid var(--line);background:#1b2735;color:var(--fg);font:inherit;text-decoration:none;display:inline-block}.primary,.btn{background:var(--acc);color:#071320;font-weight:700}button:disabled{opacity:.5;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:3px}summary{cursor:pointer;font-weight:600}.guide{border-left:3px solid var(--acc);background:#0d131c;padding:10px 12px;border-radius:6px;margin:12px 0;font-size:13px;color:var(--dim);overflow-wrap:anywhere}.guide b,.guide strong{color:var(--fg)}code{overflow-wrap:anywhere;word-break:break-word}.guide code,.panel p code{background:#182231;color:var(--fg);padding:1px 5px;border-radius:4px;font-size:12.5px}.verdict{border:1px solid var(--line);border-left-width:5px;border-radius:10px;padding:16px 18px;margin:14px 0;background:#141c27}.verdict.red{border-left-color:var(--red);background:rgba(255,130,113,.09)}.verdict.orange{border-left-color:var(--orange);background:rgba(255,192,113,.09)}.verdict.clear{border-left-color:var(--blue);background:rgba(139,197,255,.08)}.verdict.empty{border-left-color:var(--dim)}.badges{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.badge{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:700;border:1px solid var(--line)}.badge.red{color:var(--red);border-color:rgba(255,130,113,.5);background:rgba(255,130,113,.12)}.badge.orange{color:var(--orange);border-color:rgba(255,192,113,.5);background:rgba(255,192,113,.12)}.badge.blue{color:var(--blue);border-color:rgba(139,197,255,.45);background:rgba(139,197,255,.12)}.badge.dim{color:var(--dim);background:#0d131c;font-weight:500}.verdict-line{margin:10px 0 0;font-size:16px;font-weight:600;color:var(--fg)}.dot{font-weight:700}.dot.red,.cov-red{color:var(--red)}.dot.orange,.cov-orange{color:var(--orange)}.dot.blue,.cov-blue{color:var(--blue)}.cov-dim{color:var(--dim)}.unprovided{background:#0d131c;border:1px dashed var(--line);border-radius:7px;padding:10px 12px;margin:10px 0;font-size:13px;color:var(--dim)}.card{border-left-width:4px}.card.red{border-left-color:var(--red)}.card.orange{border-left-color:var(--orange)}.card.blue{border-left-color:var(--blue)}.tag{font-size:12px;font-weight:700}.red .tag{color:var(--red)}.orange .tag{color:var(--orange)}.blue .tag{color:var(--blue)}code.ev{display:block;padding:10px;background:#090d12;border-radius:5px;overflow-wrap:anywhere}.coverage{padding-left:22px}.coverage li{margin:5px 0}.file{border-top:1px solid var(--line);padding-top:14px;margin-top:16px}.file h3{color:var(--acc)}.hint{display:block;margin-top:4px;font-size:12.5px;color:var(--dim)}.kv{font-size:14px}.kv b{color:var(--fg)}.cta a:not(.btn){color:var(--acc)}.cta-list{padding-left:20px;margin:12px 0}.cta-list li{margin:6px 0}footer{margin-top:35px;padding-top:15px;border-top:1px solid var(--line);color:var(--dim);font-size:13px}[hidden]{display:none!important}@media(max-width:680px){.grid{grid-template-columns:1fr}.wrap{padding:20px 14px}button,.btn{min-height:44px}.panel{padding:14px}}
+</style>
 </head>
-<body>
-<div class="wrap"><header class="brand"><strong>Bremta</strong> <span class="tagline">All laid out.</span></header>
-  <h1>Supabase RLS policy check</h1><p class="tagline" style="color:#8b98a9;margin:.25rem 0 0;">All laid out.</p>
-  <p class="sub">Paste your <code>supabase/migrations/*.sql</code> (or a schema dump) and get a scan for
-  <code>USING (true)</code> policies, policies with no <code>TO</code> clause, <code>public</code> tables with RLS never enabled,
-  and secret-shaped values. Everything runs in this tab: no upload, no network call, no account, nothing stored.</p>
-
-  <textarea id="sql" spellcheck="false" placeholder="-- paste the contents of supabase/migrations/*.sql here"></textarea>
-  <div class="row">
-    <button class="primary" id="run">Scan</button>
-    <button id="sample">Load a demo (a typical AI-generated project)</button>
-    <button id="clear">Clear</button>
-  </div>
-
-  <div id="out"></div>
-
-  <div class="cta">
-    <h2>Found something?</h2>
-    <p>This is pattern matching over SQL text. It covers RLS and secret-shaped values only. A human review goes further:
-    IDOR / broken access control, sessions and auth, injection and upload paths, unmetered paid endpoints and spend caps,
-    webhook signature checks, storage bucket policies. Every finding comes with file-and-line evidence and a fix prompt you can
-    paste straight into Cursor or Claude Code.</p>
-    <p>
-      <a class="btn" href="https://shisanyue950901-beep.github.io/security-checkup/#pay">Go-Live Check — $199, 24h</a>
-      <a class="btn" href="https://shisanyue950901-beep.github.io/security-checkup/#pay">Founding Full Checkup — $299 for the first 3 clients</a>
-      <a class="btn ghost" href="https://shisanyue950901-beep.github.io/security-checkup/#pay">Full Checkup + Fix PR — $499</a>
-      <a class="btn ghost" href="sample-report.html">See a sample report</a>
-    </p>
-    <p class="meta" style="margin:0">Static source review only — we never run, attack or probe your app. Read-only access, code deleted within
-    7 days of delivery. The rules this scanner implements are open source:
-    <a href="https://github.com/shisanyue950901-beep/vibe-security-rules">vibe-security-rules</a>.</p>
-  </div>
-
-  <footer>Static check: no request is ever sent to a deployed environment. Scanner logic is in <code>rls-scan-en.js</code> —
-  read it before you paste anything, and run it in CI with <code>node</code> if you prefer.</footer>
-</div>
-
-<script src="rls-scan-en.js"></script>
+<body><main class="wrap">
+<header><div class="brand">Bremta</div><h1>Check whether your keys or locks were left out in the open.</h1><p class="sub">Paste your code, migrations, or config and run a local scan right in this tab — nothing is uploaded, closing the tab wipes everything, and there is no vanity security score. You don't need to paste real passwords; click "Load demo" below to see what it catches.</p><p class="meta">Checks only what you paste. Static text cannot verify live permissions, payment flows, or production deployments — missing context is marked "Unable to determine", never guessed as a vulnerability.</p></header>
+<section aria-labelledby="inputs"><h2 id="inputs">1. Pick your inputs (paste one or several)</h2>
+<details class="panel" open><summary>SQL · Paste migrations or a full schema dump in execution order</summary>
+<p class="guide"><b>Where to copy:</b> Open your project's <code>supabase/migrations/</code> folder and paste the <code>.sql</code> files in chronological order — or export your table DDL, <code>GRANT</code> statements, and RLS policies from Supabase Dashboard → Database. Supabase exposes the <code>public</code> schema by default; if a table uses <code>DEFAULT</code> or foreign keys (<code>REFERENCES</code>), this version stops at "Unable to determine".</p>
+<label for="sql">SQL text</label><textarea id="sql" spellcheck="false" autocomplete="off" placeholder="Paste CREATE TABLE, RLS, policies, and GRANT / REVOKE statements. Order affects the final state."></textarea>
+<div class="grid"><label>API-exposed schemas (comma-separated; usually public — leave blank if unsure)<input id="schemas" type="text" autocomplete="off" placeholder="e.g. public"></label><label>Tables confirmed to hold private data (schema.table, comma-separated)<input id="private-tables" type="text" autocomplete="off" placeholder="e.g. public.orders"></label></div>
+<label class="inline"><input id="sql-complete" type="checkbox">I confirm this includes the complete ordered SQL, final grants, and all policies for these tables.</label>
+<label class="inline"><input id="builtin-roles" type="checkbox">I confirm only built-in standard roles are used, with no extra role inheritance or external access controls.</label><p class="meta">Currently understands standard table creation, RLS toggles, grants, and common policies. If your SQL uses foreign keys, defaults, custom functions, or complex roles, this section stops at "Unable to determine" instead of guessing red.</p></details>
+<details class="panel"><summary>Firebase · Product-specific security rules</summary>
+<p class="guide"><b>Where to copy:</b> Open <code>firestore.rules</code>, <code>database.rules.json</code>, or <code>storage.rules</code> in your repo — or go to Firebase Console → select the product → open the <b>Rules</b> tab and copy everything. Both checkboxes below must be checked for open writes to trigger red; otherwise they stay "Unable to determine".</p>
+<label>Rules product <select id="firebase-product"><option value="firestore">Firestore rules v2</option><option value="rtdb">Realtime Database JSON</option><option value="storage">Storage rules v2</option></select></label>
+<label for="firebase">Full rules text</label><textarea id="firebase" spellcheck="false" autocomplete="off" placeholder="Paste your rules file here; nothing connects to your Firebase project."></textarea>
+<label class="inline"><input id="firebase-complete" type="checkbox">This is the complete rules file for its current use.</label><label class="inline"><input id="firebase-private" type="checkbox">This data or storage should be private, not an intentionally public dropbox or submission area.</label><p class="meta">Parent/child grants follow each product's rules; expired test-mode windows are not flagged as open writes. Complex conditions and RTDB .validate rules stop at "Unable to determine".</p></details>
+<details class="panel"><summary>JS / Config · Paste code files together with middleware</summary>
+<p class="guide"><b>Where to copy:</b> Start with these 4 file types: (1) <code>.env</code> / <code>.env.local</code> (set Language to ENV; you can keep key prefixes and mask the rest); (2) payment webhook handlers (e.g. <code>app/api/webhook/route.js</code>); (3) backend API routes that mutate data or trigger paid calls; (4) root <code>middleware.js</code> or your Express entry file. TypeScript (<code>.ts</code> / <code>.tsx</code>) is not supported yet — start with <code>.env</code> and plain <code>.js</code> files.</p>
+<p class="meta">Supports plain JavaScript (<code>.js</code>), JSON config, and <code>.env</code> files; TypeScript (<code>.ts</code> / <code>.tsx</code>) and JSX are not supported yet. Use real file paths so the scanner can skip tests and recognize your API, webhook, and middleware files — exported reports only list "Code file 1 / line N" and never include your filenames.</p><div id="files"></div><button id="add-file" type="button">Add another file</button></details>
+<details class="panel"><summary>Response Headers · Hardening tips only, not counted as issues</summary>
+<p class="guide"><b>Where to copy (pick either):</b> (1) Run <code>curl -sI https://your-domain.com</code> in your terminal and copy the full output; (2) In Chrome, press F12 → <b>Network</b> → reload the homepage → click the first request → toggle <b>Raw</b> under Response Headers and copy. Remove any lines containing <code>cookie</code> or <code>authorization</code> before pasting.</p>
+<label for="headers">Raw response headers (strip cookies/credentials; headers only, no body)</label><textarea id="headers" spellcheck="false" autocomplete="off" placeholder="HTTP/2 200&#10;content-security-policy: frame-ancestors 'self'&#10;x-content-type-options: nosniff"></textarea><p class="meta">Analyzes only the final response header block; does not check TLS certificates, redirect chains, or live sessions. Either a valid frame-ancestors directive or X-Frame-Options passes clickjacking protection.</p></details>
+<details class="panel"><summary>Check Public Files Yourself · This tool never sends requests</summary>
+<p class="guide"><b>What to check and how:</b> Enter your own site's homepage URL below, click "List exact URLs", then manually copy and open each URL in a new browser tab. A 404 or your normal site page means nothing leaked — just close it. If <code>/.env</code> returns <code>KEY=VALUE</code> lines, paste them into "JS / Config" above (Language: ENV). If <code>/.git/HEAD</code> returns <code>ref: refs/heads/...</code>, your repository metadata is exposed — lock down <code>.git</code> access on your host or server immediately.</p>
+<label for="public-url">Your own site's homepage URL</label><input id="public-url" type="text" autocomplete="off" placeholder="https://your-domain.invalid"><div class="row"><button id="make-paths" type="button">List exact URLs (no requests sent)</button></div><div id="public-paths" role="status"></div><p>Use only on a site you own. Manually open the exact paths in your own browser: your site origin plus <code>/.env</code> or <code>/.git/HEAD</code>. Check each path once — do not enumerate other paths or paste session credentials.</p><p>Paste any exposed ENV text into "JS / Config" above with Language set to ENV. A login page, ordinary HTML, error page, or bare HTTP 200 does not prove a leak. Git HEAD structure is left to manual confirmation in this version. This tool never generates clickable target links and never makes network requests.</p></details>
+</section>
+<div class="row"><button class="primary" id="run" type="button">Scan locally</button><button id="sample" type="button">Load demo</button><button id="clear" type="button">Clear all</button><button id="export" type="button" disabled>Export redacted report</button></div>
+<div id="status" role="status" aria-live="polite"></div><section id="out" aria-label="Scan results" aria-live="polite"></section>
+<section class="cta" id="upgrade" hidden><h2 id="upgrade-title"></h2><p id="upgrade-copy"></p><ul><li>Broken access control (IDOR): can swapping a user or order ID expose or modify someone else's data?</li><li>Payment bypass &amp; quota abuse: can someone skip checkout, double-claim credits, or drain paid API endpoints?</li><li>Unprotected backend actions: if cookies are stripped, can hidden admin routes or Server Actions still be called directly?</li></ul><a class="btn" href="#quickcheck">Website Security Quick Check · USD 99</a></section>
+<section class="cta" id="quickcheck"><h2>Catch the expensive pre-launch flaws with a Bremta Quick Check (USD 99).</h2><p>USD 99 Website Security Quick Check: Bremta walks through your app the way a real user (and attacker) would — checking whether changing an order ID exposes another customer's data, whether checkout or plans can be bypassed, and whether AI or SMS endpoints can be drained overnight, alongside auth/reset flows, file uploads, and payment webhooks. These require hands-on testing inside your live app; no free static text scanner can catch them.</p><ul class="cta-list"><li><strong>What you get (deliverable):</strong> A severity-ranked issue list with minimal reproduction steps and actionable fix guidance for every finding (no filler noise; anything that cannot be verified is clearly labeled).</li><li><strong>Turnaround:</strong> <strong>Delivered within 48 hours once payment, written test authorization, and isolated test access are all in place.</strong></li><li><strong>How to start:</strong> Email <a href="mailto:shisanyue950901@gmail.com">shisanyue950901@gmail.com</a> with your site URL and high-level stack. We first verify <strong>domain ownership</strong> and send a <strong>written test authorization</strong> before arranging payment and isolated test access. <strong>We never run active tests without written authorization.</strong></li></ul><p><a class="btn" href="mailto:shisanyue950901@gmail.com?subject=Bremta%20USD%2099%20Website%20Security%20Quick%20Check">Email to book USD 99 Quick Check</a></p><p class="meta">This page never uploads your code or submits orders automatically; emails are sent solely from your own mail client when you choose.</p></section>
+<footer>Bremta · Local static check in your browser. Refreshing or clearing drops all pasted input; exports only happen when you click and contain redacted evidence only. Never treat "Not observed in pasted input" as a security guarantee.</footer>
+</main>
+<script src="vendor/acorn.js"></script><script src="scan-v2.js"></script>
 <script>
-var SAMPLE = [
-  '-- a typical AI-generated project: three distinct holes',
-  'create table public.orders (id uuid primary key, user_id uuid, email text, total int);',
-  'alter table public.orders enable row level security;',
-  'create policy "allow_all" on public.orders',
-  '  for all to authenticated',
-  '  using (true) with check (true);',
-  '',
-  'create table public.profiles (id uuid primary key, email text);',
-  'alter table public.profiles enable row level security;',
-  'create policy "read_all" on public.profiles for select using (true);',
-  '',
-  'create table public.invoices (id uuid primary key, total int);',
-  '',
-  '-- and the one that gets copied into production',
-  "SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIn0.demo-not-a-real-key';"
-].join('\n');
-
-var $sql = document.getElementById('sql'),
-    $out = document.getElementById('out');
-
-function esc(s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+'use strict';
+const byId=id=>document.getElementById(id),fields=['sql','firebase','headers','schemas','private-tables','public-url'];let report=null;
+function elem(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
+function addFile(data={}){
+ const n=document.createElement('div');n.className='file';n.append(elem('h3','Code / config file'));
+ const spec=[['name','Real file path (keep the real filename & path)','text','e.g. app/api/webhook/route.js or middleware.js','Do not use generic names like "file1": the scanner relies on real paths to detect webhooks, API routes, and middleware (and to skip tests). Exported reports never include your filenames.'],['language','Language',['js','json','env']],['environment','Environment',['unknown','production','test']],['client','Client-reachable',['unknown','yes','no']],['publicEndpoint','Intentionally public endpoint',['unknown','yes','no']],['corsVersion','cors package version (leave blank if unsure)','text','e.g. 2.8.5']];
+ for(const [key,title,type,placeholder,hint]of spec){
+  const label=elem('label',title),control=elem(Array.isArray(type)?'select':'input');
+  control.dataset.key=key;
+  if(Array.isArray(type)){for(const v of type){const o=elem('option',({js:'JavaScript (.js / ES2022)',json:'JSON config',env:'ENV',unknown:'Not sure',production:'Production',test:'Test',yes:'Yes',no:'No'})[v]||v);o.value=v;control.append(o);}}
+  else{control.type='text';control.autocomplete='off';if(placeholder)control.placeholder=placeholder;}
+  if(data[key]!==undefined)control.value=data[key];
+  label.append(control);
+  if(hint)label.append(elem('span',hint,'hint'));
+  n.append(label);
+ }
+ const label=elem('label','File content'),text=elem('textarea');text.dataset.key='text';text.spellcheck=false;text.autocomplete='off';text.value=data.text||'';label.append(text);n.append(label);
+ const remove=elem('button','Remove file');remove.type='button';remove.onclick=()=>{n.remove();invalidate();};n.append(remove);byId('files').append(n);
 }
-
-function render(r) {
-  if (!r.stats.tables && !r.stats.policies && !r.findings.length) {
-    $out.innerHTML = '<p class="meta">No CREATE TABLE or CREATE POLICY statements parsed. Make sure you pasted SQL, not JSON or TypeScript.</p>';
-    return;
-  }
-  var scoreColor = r.score >= 80 ? 'var(--ok)' : (r.score >= 40 ? 'var(--high)' : 'var(--crit)');
-  var html = '<div class="score"><b style="color:' + scoreColor + '">' + r.score + '</b><span class="meta">/100</span></div>'
-    + '<p class="meta">' + r.stats.tables + ' tables · ' + r.stats.policies + ' policies (' + r.stats.permissive
-    + ' of them equivalent to wide open) · ' + r.stats.rlsOff + ' tables with RLS off · critical ' + r.counts.critical
-    + ' / high ' + r.counts.high + ' / medium ' + r.counts.medium + '</p>';
-
-  if (!r.findings.length) {
-    html += '<p class="empty">Nothing matched. That is not the same as secure: static rules cannot see authorization logic, business-layer checks, or third-party configuration.</p>';
-  }
-  r.findings.forEach(function (f) {
-    html += '<div class="card ' + f.severity + '">'
-      + '<div class="tag">' + f.severity + ' · ' + f.code + ' · ' + esc(f.table) + ' · L' + f.line + '</div>'
-      + '<div class="title">' + esc(f.title) + '</div>'
-      + '<code class="ev">' + esc(f.evidence) + '</code>'
-      + '<p class="kv"><b>Impact:</b> ' + esc(f.impact) + '</p>'
-      + '<p class="kv"><b>Fix:</b> ' + esc(f.fix) + '</p>'
-      + '</div>';
-  });
-  $out.innerHTML = html;
+function list(id){return byId(id).value.split(',').map(x=>x.trim()).filter(Boolean);}
+function invalidate(){report=null;byId('export').disabled=true;byId('out').replaceChildren();byId('upgrade').hidden=true;byId('status').textContent='Input changed — run the local scan again.';}
+function collect(){return {sql:byId('sql').value,firebase:{text:byId('firebase').value,product:byId('firebase-product').value,complete:byId('firebase-complete').checked,privateData:byId('firebase-private').checked},headers:byId('headers').value,files:Array.from(byId('files').children).map(n=>{const f={};n.querySelectorAll('[data-key]').forEach(c=>f[c.dataset.key]=c.value);f.client=f.client==='yes';f.publicEndpoint=f.publicEndpoint==='yes';return f;}).filter(f=>f.text.trim()),context:{completeSql:byId('sql-complete').checked,roleModel:byId('builtin-roles').checked?'builtin-only':'unknown',exposedSchemas:list('schemas'),privateTables:list('private-tables')}};}
+function isUnprovided(f){return f.state===BremtaScan.states.unknown&&f.code===f.source&&f.title==='No input provided for this section';}
+function groupFindings(r,group){return r.findings.filter(f=>group==='Code'?(f.source==='Code'||f.source.startsWith('Code file ')):f.source===group);}
+function render(r){
+ const out=byId('out');out.replaceChildren();out.append(elem('h2','2. Scan results'));
+ const unprovidedGroups=[],providedItems=[];let providedUnknown=false;
+ for(const c of r.coverage){
+  const fs=groupFindings(r,c.group);
+  if(fs.length===1&&isUnprovided(fs[0])){unprovidedGroups.push(c.group);continue;}
+  const reds=fs.filter(f=>f.level==='red').length,oranges=fs.filter(f=>f.level==='orange').length,blues=fs.filter(f=>f.level==='blue').length;
+  const hasUnknown=fs.some(f=>f.state===BremtaScan.states.unknown);
+  if(hasUnknown)providedUnknown=true;
+  let label=BremtaScan.states.clear,cls='cov-dim';
+  if(reds){label=BremtaScan.states.found;cls='cov-red';}
+  else if(oranges){label=BremtaScan.states.review;cls='cov-orange';}
+  else if(hasUnknown){label=BremtaScan.states.unknown;cls='cov-dim';}
+  else if(blues){label='No red/orange issues observed ('+blues+' hardening '+(blues===1?'tip':'tips')+')';cls='cov-blue';}
+  providedItems.push({group:c.group,label,cls});
+ }
+ const providedCount=providedItems.length;
+ const verdictCls=providedCount===0?'empty':r.counts.red>0?'red':r.counts.orange>0?'orange':'clear';
+ const verdict=elem('div',undefined,'verdict '+verdictCls);
+ const badges=elem('div',undefined,'badges');
+ badges.append(
+  elem('span','Red · Confirmed '+r.counts.red,'badge red'),
+  elem('span','Orange · Manual review '+r.counts.orange,'badge orange'),
+  elem('span','Blue · Hardening tips '+r.counts.blue,'badge blue'),
+  elem('span','Hardening tips and "Unable to determine" are not counted as issues','badge dim')
+ );
+ verdict.append(badges);
+ const blueTail=r.counts.blue?' (plus '+r.counts.blue+' hardening '+(r.counts.blue===1?'tip':'tips')+', not counted)':'';
+ let summaryText='';
+ if(providedCount===0)summaryText='Nothing pasted yet. Pick 1–2 sections that match your stack, paste them in, and click "Scan locally".';
+ else if(r.counts.red>0)summaryText='Hold off on shipping: found '+r.counts.red+' confirmed '+(r.counts.red===1?'issue':'issues')+' (red) and '+r.counts.orange+' '+(r.counts.orange===1?'item':'items')+' needing manual review (orange)'+(r.counts.blue?', plus '+r.counts.blue+' hardening '+(r.counts.blue===1?'tip':'tips')+' (blue)':'')+'. Fix red items first, then verify each orange item.';
+ else if(r.counts.orange>0)summaryText='No red confirmed issues found, but '+r.counts.orange+' '+(r.counts.orange===1?'item needs':'items need')+' manual review (orange)'+(r.counts.blue?', plus '+r.counts.blue+' hardening '+(r.counts.blue===1?'tip':'tips')+' (blue)':'')+'. Double-check for real leaked keys, wide-open private tables, or unguarded endpoints.';
+ else if(providedUnknown)summaryText='No red or orange issues observed in pasted input'+blueTail+', though some pasted sections lack context or use unsupported syntax ("Unable to determine"). Check the notes and the three blind spots below.';
+ else summaryText='No red or orange issues observed in pasted input'+blueTail+'. That is not a security guarantee — static text checks cannot spot live IDOR, payment bypasses, or unprotected backend actions. Review the blind spots below.';
+ verdict.append(elem('p',summaryText,'verdict-line'));
+ out.append(verdict);
+ if(providedItems.length){
+  const cov=elem('ul',undefined,'coverage');
+  for(const item of providedItems){const li=elem('li');li.append(elem('strong',item.group+': '),elem('span',item.label,item.cls));cov.append(li);}
+  out.append(cov);
+ }
+ if(unprovidedGroups.length)out.append(elem('p','Not provided (skipped, not counted; unable to determine): '+unprovidedGroups.join(', '),'unprovided'));
+ const legend=elem('p',undefined,'meta legend');
+ legend.append(elem('span','Red','dot red'),' = confirmed misconfiguration; ',elem('span','Orange','dot orange'),' = needs manual review; ',elem('span','Blue','dot blue'),' = hardening tip (not counted as an issue). "Unable to determine" is neither a vulnerability nor a pass.');
+ out.append(legend);
+ const visibleFindings=r.findings.filter(f=>!isUnprovided(f));
+ for(const f of visibleFindings){
+  const card=elem('article',undefined,'card '+(f.level||'unknown'));
+  const levelLabel=f.level?({red:'Red',orange:'Orange',blue:'Blue'})[f.level]:'Unrated';
+  const stateLabel=f.level==='blue'?'Hardening tip (not counted)':f.state;
+  card.append(elem('div',levelLabel+' · '+stateLabel+' · '+f.code+' · '+f.source+' L'+f.line,'tag'));
+  card.append(elem('h3',f.title));
+  card.append(elem('code',f.evidence,'ev'));
+  for(const [label,key]of [['Impact','impact'],['Fix direction','fix'],['Assumptions & boundary','boundary']])card.append(elem('p',label+': '+f[key],'kv'));
+  out.append(card);
+ }
+ byId('upgrade').hidden=false;
+ const lit=r.counts.red+r.counts.orange>0;
+ byId('upgrade-title').textContent=lit?'Fix the flagged spots first, then clear out the deeper flaws hiding behind them.':providedCount===0?'No scannable input provided — unable to determine.':providedUnknown?'Some pasted input is still unable to determine, and static blind spots remain.':'No red or orange issues observed in pasted input.';
+ byId('upgrade-copy').textContent=lit?'Every card above gives a starting point — knock out the clear misconfigurations first. Still, when AI-generated code leaves gaps here, similar bugs often hide in webhook handling, access control, and rate limiting that pasted snippets cannot show. Before you launch and take payments, authorize Bremta for a USD 99 Website Security Quick Check to test the flows that actually cost money.':'This free scan only covers pasted text and supported syntax — it cannot reconstruct your full business logic or live permissions. Before you launch, charge users, or sell your app, authorize Bremta for a USD 99 Website Security Quick Check covering these three blind spots.';
+ byId('export').disabled=false;byId('status').textContent='Local scan complete. Report contains redacted evidence only; zero network requests were made.';
 }
-
-document.getElementById('run').onclick = function () {
-  render(RLSScan.scan($sql.value));
-};
-document.getElementById('sample').onclick = function () {
-  $sql.value = SAMPLE; render(RLSScan.scan(SAMPLE));
-};
-document.getElementById('clear').onclick = function () {
-  $sql.value = ''; $out.innerHTML = '';
-};
+byId('make-paths').onclick=()=>{const out=byId('public-paths');out.replaceChildren();try{const u=new URL(byId('public-url').value);if(!['https:','http:'].includes(u.protocol)||u.username||u.password)throw Error();for(const p of ['/.env','/.git/HEAD'])out.append(elem('code',new URL(p,u.origin).href,'ev'));out.append(elem('p','Open these exact URLs manually in your own browser, then paste relevant results above. No request was sent from this page.','meta'));}catch(_){out.append(elem('p','Enter an HTTP or HTTPS homepage URL without a username or password.'));}};
+byId('run').onclick=()=>{try{report=BremtaScan.scan(collect());render(report);}catch(_){invalidate();byId('status').textContent='Scan did not complete. Try smaller input or make sure the local script files are intact.';}};
+byId('add-file').onclick=()=>{if(byId('files').children.length>=40)return;addFile();invalidate();};
+byId('clear').onclick=()=>{fields.forEach(id=>byId(id).value='');document.querySelectorAll('input[type=checkbox]').forEach(n=>n.checked=false);byId('files').replaceChildren();byId('public-paths').replaceChildren();addFile();byId('firebase-product').value='firestore';invalidate();byId('status').textContent='Inputs and report cleared.';};
+byId('sample').onclick=()=>{byId('clear').click();byId('sql').value='create table public.orders (id int, owner_id uuid);\nalter table public.orders enable row level security;\ngrant usage on schema public to authenticated;\ngrant insert on public.orders to authenticated;\ncreate policy submit on public.orders for insert to authenticated with check (true);';byId('schemas').value='public';byId('private-tables').value='public.orders';byId('sql-complete').checked=true;byId('builtin-roles').checked=true;byId('status').textContent='Loaded synthetic SQL demo (no real credentials). Click "Scan locally" to run.';};
+byId('export').onclick=()=>{if(!report)return;const blob=new Blob([BremtaScan.toMarkdown(report)],{type:'text/markdown;charset=utf-8'}),url=URL.createObjectURL(blob),a=elem('a');a.href=url;a.download='bremta-selfcheck-v2.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),0);};
+document.querySelector('main').addEventListener('input',e=>{if(e.target.matches('input,textarea,select'))invalidate();});
+addFile();
 </script>
-</body>
-</html>
+</body></html>
